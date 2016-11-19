@@ -67,7 +67,7 @@ CREATE TABLE `users` (
   `password` varchar(120) DEFAULT NULL,
   `shell` varchar(30) NOT NULL,
   `homedir` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL COMMENT,
+  `status` int(1) NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
