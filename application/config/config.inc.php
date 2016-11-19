@@ -2,7 +2,7 @@
 
 /*
 ProAUT Project Configuration file
- */
+*/
 
 $config = array(
  'PROJECT_NAME' => 'ProFTPd Administrate Users Tool',
@@ -19,5 +19,3 @@ $config = array(
   'charset' => 'utf8',
   ),
 );
-
-?>

@@ -5,8 +5,6 @@
 */
 
 class Quota extends DatabaseObject{
- public $name;
- public $quota_type;
+ protected $name;
+ protected $quota_type;
 }
-
-?>

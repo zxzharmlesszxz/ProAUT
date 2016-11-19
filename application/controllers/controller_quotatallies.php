@@ -7,10 +7,9 @@ class Controller_Quotatallies extends Controller{
   $this->view = new View();
   $this->query = $_REQUEST;
  }
- 
- public function action_index()
- {
-  $data = $this->model->get_data();  
+
+ public function action_index(){
+  $data = $this->model->get_data();
   $this->view->generate('quotatallies_view.php', 'template_view.php', $data);
  }
 

@@ -39,10 +39,6 @@ class Route{
 		if(file_exists($controller_path)){
 			include "application/controllers/".$controller_file;
 		}else{
-			/*
-			правильно было бы кинуть здесь исключение,
-			но для упрощения сразу сделаем редирект на страницу 404
-			*/
 			Route::ErrorPage404();
 		}
 
@@ -50,16 +46,15 @@ class Route{
 		$action = $action_name;
 		
 		if(method_exists($controller, $action)){
-			$controller->$action();
+		 $controller->$action();
 		}else{
-			// здесь также разумнее было бы кинуть исключение
-			Route::ErrorPage404();
+      Route::ErrorPage404();
 		}
 	}
 
 	public function ErrorPage404(){
-                $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-                header('HTTP/1.1 404 Not Found');
+     $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
+     header('HTTP/1.1 404 Not Found');
 		header("Status: 404 Not Found");
 		header('Location:'.$host.'404');
  }

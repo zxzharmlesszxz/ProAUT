@@ -97,4 +97,3 @@ class MySQL_Database extends Database{
     }
 
 }
-?>

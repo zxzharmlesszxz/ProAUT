@@ -7,9 +7,9 @@ class Controller_Users extends Controller{
   $this->view = new View();
   $this->query = $_REQUEST;
  }
- 
+
  public function action_index(){
-  $data = $this->model->get_data();  
+  $data = $this->model->get_data();
   $this->view->generate('users_view.php', 'template_view.php', $data);
  }
 

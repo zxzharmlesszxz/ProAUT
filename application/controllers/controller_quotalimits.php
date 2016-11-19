@@ -1,16 +1,14 @@
 <?php
 
 class Controller_Quotalimits extends Controller{
-
  public function __construct(){
   $this->model = new Model_Quotalimits();
   $this->view = new View();
   $this->query = $_REQUEST;
  }
- 
- public function action_index()
- {
-  $data = $this->model->get_data();  
+
+ public function action_index(){
+  $data = $this->model->get_data();
   $this->view->generate('quotalimits_view.php', 'template_view.php', $data);
  }
 

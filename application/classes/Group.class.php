@@ -6,37 +6,16 @@ Group class
 
 class Group extends DatabaseObject{
  protected static $table_name = "groups";
- protected static $db_fields = array('groupid', 'groupname', 'gid', 'members');
+ protected static $db_fields = array('groupid', 'groupname', 'gid');
 
- public $groupid;
- public $groupname;
- public $gid;
- public $members;
+ private $groupid;
+ private $groupname;
+ private $gid;
 
- public static function add($groupname, $gid = NULL){
+ public static function add($groupname, $gid = config()->DEFAULT_GID){
   $new = new static;
   $new->groupname = trim($groupname);
-  $new->gid = empty($gid) ? config()->DEFAULT_GID : intval(trim($gid));
+  $new->gid = intval(trim($gid));
   return $new;
  }
-
- public function addMember($member){
-  
-  $members = (!empty($this->members) AND $this->members != 'NULL') ? explode(',', $this->members) : array();
-  if(array_search($member, $members) === FALSE && !empty($member)){
-    $members[] = $member;
-  }
-  $this->members = implode(',', $members);
- }
-
- public function delMember($member){
-  $members = explode(',', $this->members);
-  $key = array_search($member, $members);
-  if($key !== FALSE){
-    unset($members[$key]);
-  }
-  $this->members = implode(',', $members);
- }
 }
-
-?>
