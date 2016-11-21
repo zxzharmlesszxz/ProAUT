@@ -8,7 +8,9 @@ CREATE TABLE `groups` (
   `groupid` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `groupname` varchar(50) NOT NULL,
   `gid` int(5) unsigned NOT NULL,
-  PRIMARY KEY (`groupid`)
+  PRIMARY KEY (`groupid`),
+  UNIQUE KYE `gid` (`gid`),
+  UNIQUE KYE `groupname` (`groupname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
@@ -68,7 +70,8 @@ CREATE TABLE `users` (
   `shell` varchar(30) NOT NULL,
   `homedir` varchar(255) NOT NULL,
   `status` int(1) NOT NULL,
-  PRIMARY KEY (`userid`)
+  PRIMARY KEY (`userid`),
+  UNIQUE KEY `login` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --

@@ -1,0 +1,16 @@
+#AuthType Basic
+#AuthName "Login"
+#AuthUserFile /www/proaut.contra.net.ua/.htpassword
+#require valid-user
+
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ RewriteBase /
+ RewriteRule .htaccess - [F]
+ RewriteRule .htpassword - [F]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule !\.(js|gif|jpg|jpeg|png|css|ico)$ index.php [L]
+# RewriteRule .* index.php [L]
+</IfModule>
+

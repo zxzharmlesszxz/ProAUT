@@ -8,18 +8,22 @@ class User extends DatabaseObject{
  protected static $table_name = "users";
  protected static $db_fields = array('userid', 'login', 'password', 'username', 'email', 'uid', 'gid', 'homedir', 'shell', 'status');
 
- private $userid;
- private $login;
- private $password;
- private $username;
- private $email;
- private $uid;
- private $gid;
- private $homedir;
- private $shell;
- private $status;
+ protected $userid;
+ protected $login;
+ protected $password;
+ protected $username;
+ protected $email;
+ protected $uid;
+ protected $gid;
+ protected $homedir;
+ protected $shell;
+ protected $status;
 
- public static function add($login, $password, $username, $email, $homedir = NULL, $shell = config()->DEFAULT_SHELL, $uid = config()->DEFAULT_GID , $gid = config()->DEFAULT_GID){
+
+ final public function __get($key){
+  return $this->$key;
+ }
+ public static function add($login, $password, $username, $email, $homedir = NULL, $shell = NULL, $uid = NULL , $gid = NULL){
   //global $config;
   $new = new static;
   $new->login = trim($login);
@@ -27,10 +31,10 @@ class User extends DatabaseObject{
 //  $new->password = md5(trim($password));
   $new->username = trim($username);
   $new->email = trim($email);
-  $new->uid = intval(trim($uid));
-  $new->gid = intval(trim($gid));
+  $new->uid = empty($uid) ? config()->DEFAULT_UID : intval(trim($uid));
+  $new->gid = empty($gid) ? config()->DEFAULT_GID : intval(trim($gid));
   $new->homedir = empty($homedir) ? '/ftp/incoming/'.$new->login : trim($homedir);
-  $new->shell = trim($shell);
+  $new->shell = empty($shell) ? config()->DEFAULT_SHELL : trim($shell);
   $new->status = 0;
   return $new;
  }

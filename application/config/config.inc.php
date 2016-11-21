@@ -13,9 +13,9 @@ $config = array(
  'DEFAULT_SHELL' => '/bin/nonexistent',
  'mysql' => array(
   'host' => 'localhost',
-  'database' => 'proftpd',
-  'user' => 'proftpd',
-  'password' => 'proftpd',
+  'database' => 'proftp',
+  'user' => 'proftp',
+  'password' => 'proftp',
   'charset' => 'utf8',
   ),
 );
