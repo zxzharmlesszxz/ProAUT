@@ -27,7 +27,7 @@
   <img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/groups/edit/?groupid='.$row->groupid.'\'"/></span></td><td>';
   echo $row->gid.'</td><td>';
   foreach(explode(',', $row->members) as $member){
-   echo '<a href="/users/show/?login='.$member.'">'.$member.'</a> ';
+   echo '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
   }
   echo '</td></tr>';
  }
@@ -36,3 +36,4 @@
  </tbody>
 </table>
 </p>
+

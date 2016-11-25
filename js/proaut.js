@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  
   $(document).on('click','img.deleteGroup', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
@@ -18,9 +17,8 @@ $(document).ready(function(){
    };
   });
 
-
   $(document).on('click','span.addMember', function(event){
-    var el = $('select#users'), 
+    var el = $('select#users'),
      els = $('select#users option:selected'),
      id = $('select#members').data('id');
      els.each(function(){
@@ -77,14 +75,6 @@ $(document).ready(function(){
     });
   });
 
-  //$('.toggle').toggles({checkbox: true});
-/*  $("input[id^='status']").radiobutton({
-    className: 'jquery-switch',
-    checkedClass: 'jquery-switch-on'
-  });
-*/
-
-
   $(document).on('change',"input[type=checkbox]", function(event){
     var el = $(this);
      if(el.is(':checked')){
@@ -92,7 +82,6 @@ $(document).ready(function(){
      }else{
       el.attr('value',0);
      }
-     
   });
 
   $(document).on('change',"input[type=checkbox].status", function(event){
@@ -113,14 +102,8 @@ $(document).ready(function(){
      form = $(this).parent(),
      send = '';
      form.children('input').each(function(){
-      //var user = $(this),
-        //username = user.val();
         send += $(this).prop('name')+'='+$(this).val()+'&';
-
-       //alert(send.join('&'));
     });
-
-//       alert(send);
 
     $.ajax({
      url: '/users/add/',
@@ -136,7 +119,6 @@ $(document).ready(function(){
   '<td>'+data['homedir']+'</td>'+
   '<td><input class="status" type="checkbox" data-id="'+data['userid']+'" '+((data['status'] != 0)?'checked':'')+' /></td>'+
   '</tr>');
-//alert(data.join('&'));
      }
     });
   });
@@ -240,8 +222,6 @@ $(document).ready(function(){
      form = $(this).parent().parent().parent(),
      send = '';
      form.children().find('input').each(function(){
-      //var user = $(this),
-        //username = user.val();
         send += $(this).prop('name')+'='+$(this).val()+'&';
     });
      alert(send);

@@ -25,16 +25,15 @@ class Model_Groups extends Model{
   return $group;
  }
 
-  public function addMember_group($groupid, $member){
-    $group = Group::find_by_id($groupid);
-    $group->addMember(trim($_REQUEST['member']));
-    return $group->save();
-  }
+ public function addMember_group($groupid, $member){
+  $group = Group::find_by_id($groupid);
+  $group->addMember(trim($_REQUEST['member']));
+  return $group->save();
+ }
 
  public function deleteMember_group($groupid, $member){
   $group = Group::find_by_id($groupid);
   $group->delMember($member);
   return $group->save();
  }
-
 }

@@ -1,13 +1,18 @@
 <?php
 
 /**
-* 
+*
 */
 
 class QuotaLimit extends Quota{
  protected static $table_name = 'quotalimits';
- protected static $db_fields = array('quotalimitid', 'name', 'quota_type', 'per_session', 'limit_type', 'bytes_in_avail', 'bytes_out_avail', 'bytes_xfer_avail', 'files_in_avail', 'files_out_avail', 'files_xfer_avail');
- 
+ protected static $db_fields = array(
+				'quotalimitid', 'name', 'quota_type',
+				'per_session', 'limit_type', 'bytes_in_avail',
+				'bytes_out_avail', 'bytes_xfer_avail',
+				'files_in_avail', 'files_out_avail',
+				'files_xfer_avail');
+
  private $quotalimitid;
  protected $quota_type;
  private $per_session = 'false';
@@ -19,7 +24,11 @@ class QuotaLimit extends Quota{
  private $files_out_avail = 0;
  private $files_xfer_avail = 0;
 
- public static function add($name, $quota_type, $per_session, $limit_type, $bytes_in_avail, $bytes_out_avail, $bytes_xfer_avail, $files_in_avail, $files_out_avail, $files_xfer_avail){
+ public static function add(
+			$name, $quota_type, $per_session, $limit_type,
+			$bytes_in_avail, $bytes_out_avail, $bytes_xfer_avail,
+			$files_in_avail, $files_out_avail, $files_xfer_avail
+			){
   $new = new static;
   $new->name = trim($name);
   $new->quota_type = trim($quota_type);

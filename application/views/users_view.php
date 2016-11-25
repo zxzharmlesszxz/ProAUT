@@ -29,7 +29,8 @@
 <tbody>
 <?php
 
- foreach($data as $row){
+ foreach($data->keys() as $login){
+  $row = $data->getItem($login);
   echo '<tr>
    <td>'.$row->login.'<span class="actions">
     <img data-id="'.$row->userid.'" class="deleteUser" src="/images/delete.png" title="Delete" alt="Delete"/>

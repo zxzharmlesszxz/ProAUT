@@ -23,5 +23,3 @@ function db(){
 }
 
 Route::start();
-
-?>

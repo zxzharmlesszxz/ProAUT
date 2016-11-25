@@ -1,12 +1,15 @@
 <?php
 
-/*
-User class
- */
+/***
+* User class
+***/
 
 class User extends DatabaseObject{
  protected static $table_name = "users";
- protected static $db_fields = array('userid', 'login', 'password', 'username', 'email', 'uid', 'gid', 'homedir', 'shell', 'status');
+ protected static $db_fields = array(
+				'userid', 'login', 'password', 'username',
+				'email', 'uid', 'gid', 'homedir', 'shell', 'status'
+				);
 
  protected $userid;
  protected $login;
@@ -19,11 +22,14 @@ class User extends DatabaseObject{
  protected $shell;
  protected $status;
 
-
  final public function __get($key){
   return $this->$key;
  }
- public static function add($login, $password, $username, $email, $homedir = NULL, $shell = NULL, $uid = NULL , $gid = NULL){
+
+ public static function add(
+			$login, $password, $username, $email, $homedir = NULL,
+			$shell = NULL, $uid = NULL , $gid = NULL
+			){
   //global $config;
   $new = new static;
   $new->login = trim($login);

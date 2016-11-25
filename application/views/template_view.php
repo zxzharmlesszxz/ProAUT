@@ -4,8 +4,8 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<title>ProAUT - ProFTP Administrate Users Tool</title>
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
-		<link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script src="/js/jquery-2.1.3.min.js" type="text/javascript"></script>
 		<script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -43,8 +43,6 @@
 				<div id="page-bottom-sidebar">
 					<h3>Contacts</h3>
 					<ul class="list">
-						<li class="first">icq: 499913046</li>
-						<li>skypeid: harmless_bc-gold</li>
 						<li class="last">email: zxzharmlesszxz@gmail.com</li>
 					</ul>
 				</div>

@@ -3,7 +3,12 @@
 class Model_Users extends Model{
  
  public function get_data(){
-  return User::find_all();
+  #return User::find_all();
+  $users = new Collection;
+  foreach(User::find_all() as $user){
+   $users->addItem($user, $user->login);
+  }
+  return $users;
  }
 
  public function get_user($userid){
@@ -38,6 +43,7 @@ class Model_Users extends Model{
   if(!$u){
    return FALSE;
   }
+  var_dump($u);
   foreach($user as $key => $value){
    $u->$key = $value;
    if($key == 'password'){

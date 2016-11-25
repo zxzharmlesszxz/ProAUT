@@ -12,7 +12,7 @@
 <tbody>
 <?php
 
-  echo '<tr><td><label for="login">Login</label></td><td><input type="text" value="'.$data->login.'" name="user[login]"/></td></tr>';
+  echo '<tr><td><label for="login">Login</label></td><td><input type="text" readonly="true" value="'.$data->login.'" name="user[login]"/></td></tr>';
   echo '<tr><td><label for="username">User Name</label></td><td><input type="text" value="'.$data->username.'" name="user[username]"/></td></tr>';
   echo '<tr><td><label for="email">Email</label></td><td><input type="email" value="'.$data->email.'" name="user[email]"/></td></tr>';
   echo '<tr><td><label for="homedir">Homedir</label></td><td><input type="text" value="'.$data->homedir.'" name="user[homedir]"/></td></tr>';
