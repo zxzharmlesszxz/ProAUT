@@ -1,6 +1,6 @@
 #AuthType Basic
 #AuthName "Login"
-#AuthUserFile /www/proaut.contra.net.ua/.htpassword
+#AuthUserFile /www/proaut/.htpassword
 #require valid-user
 
 <IfModule mod_rewrite.c>
