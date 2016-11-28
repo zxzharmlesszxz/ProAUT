@@ -2,15 +2,14 @@ $(document).ready(function(){
   $(document).on('click','img.deleteGroup', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
-     id = el.data('id'),
-     result = "Group #" + id + " has been removed.";
+     id = el.data('id');
 
     $.ajax({
      url: '/groups/delete/',
      data: "groupid="+id,
      type: 'post',
      success: function(){
-      alert(result);
+      alert("Group #" + id + " has been removed.");
       el.parent().parent().parent().hide();
      }
     });

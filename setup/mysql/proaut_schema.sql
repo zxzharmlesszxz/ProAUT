@@ -8,6 +8,7 @@ CREATE TABLE `groups` (
   `groupid` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `groupname` varchar(50) NOT NULL,
   `gid` int(5) unsigned NOT NULL,
+  `members` text DEFAULT NULL,
   PRIMARY KEY (`groupid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
