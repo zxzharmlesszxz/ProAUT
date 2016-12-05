@@ -1,8 +1,8 @@
 <?php
 
-/*
-Group class
-*/
+/**
+* Group class
+**/
 
 class Group extends DatabaseObject{
  protected static $table_name = "groups";

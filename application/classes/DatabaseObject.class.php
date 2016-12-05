@@ -1,20 +1,24 @@
 <?php
 
+/**
+* DatabaseObject Class
+**/
+
 class DatabaseObject {
 
     private static $table_name;
     protected static $db_fields = array();
 
-    public static function find_all(){
+    public static function find_all() {
         return self::find_by_sql("SELECT * FROM " . static::$table_name." ORDER BY ".static::$db_fields[0]." ASC");
     }
 
-    public static function find_by_id($id = 0){
+    public static function find_by_id($id = 0) {
         $result_array = self::find_by_sql("SELECT * FROM " . static::$table_name . " WHERE ".static::$db_fields[0]."=" . db()->escape_value($id) . " LIMIT 1");
         return !empty($result_array) ? $result_array[0] : false;
     }
 
-    public static function find_by_scope($scopes){
+    public static function find_by_scope($scopes) {
      $scope = array();
      foreach($scopes as $key => $value)
      {
@@ -25,7 +29,7 @@ class DatabaseObject {
      return !empty($result_array) ? $result_array : false;
     }
 
-    public static function find_by_like($scopes){
+    public static function find_by_like($scopes) {
      $scope = array();
      foreach($scopes as $key => $value)
      {
@@ -36,7 +40,7 @@ class DatabaseObject {
      return !empty($result_array) ? $result_array : false;
     }
 
-    public static function find_by_sql($sql = ""){
+    public static function find_by_sql($sql = "") {
         $result_set = db()->query($sql);
         $object_array = array();
         while ($row = db()->fetch_array($result_set)) {
@@ -45,7 +49,7 @@ class DatabaseObject {
         return $object_array;
     }
 
-    public static function count_all(){
+    public static function count_all() {
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
         $result_set = db()->query($sql);
         $row = db()->fetch_array($result_set);

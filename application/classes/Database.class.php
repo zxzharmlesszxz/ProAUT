@@ -1,6 +1,9 @@
 <?php
 
-// Create Database Class
+/**
+* Database Class
+**/
+
 abstract class Database {
 
     private $connection;
@@ -16,7 +19,7 @@ abstract class Database {
 // Perform database query function
     abstract function query($sql);
 
-// hz
+// prepare values
     abstract function escape_value($value);
 
 // "database-neutral" methods	

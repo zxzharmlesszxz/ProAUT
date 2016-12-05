@@ -4,12 +4,9 @@
 * User class
 ***/
 
-class User extends DatabaseObject{
+class User extends DatabaseObject {
  protected static $table_name = "users";
- protected static $db_fields = array(
-				'userid', 'login', 'password', 'username',
-				'email', 'uid', 'gid', 'homedir', 'shell', 'status'
-				);
+ protected static $db_fields = array('userid', 'login', 'password', 'username', 'email', 'uid', 'gid', 'homedir', 'shell', 'status');
 
  protected $userid;
  protected $login;
@@ -22,19 +19,14 @@ class User extends DatabaseObject{
  protected $shell;
  protected $status;
 
- final public function __get($key){
+ final public function __get($key) {
   return $this->$key;
  }
 
- public static function add(
-			$login, $password, $username, $email, $homedir = NULL,
-			$shell = NULL, $uid = NULL , $gid = NULL
-			){
-  //global $config;
+ public static function add($login, $password, $username, $email, $homedir = NULL, $shell = NULL, $uid = NULL , $gid = NULL) {
   $new = new static;
   $new->login = trim($login);
   $new->setPassword($password);
-//  $new->password = md5(trim($password));
   $new->username = trim($username);
   $new->email = trim($email);
   $new->uid = empty($uid) ? config()->DEFAULT_UID : intval(trim($uid));
@@ -45,12 +37,13 @@ class User extends DatabaseObject{
   return $new;
  }
 
- public function changeStatus(){
+ public function changeStatus() {
   $this->status = ($this->status == 1) ? 0 : 1;
   return $this->save();
  }
 
- public function setPassword($password){
+ protected function setPassword($password) {
+  //$this->password = md5(trim($password));
   $this->password = '*'.strtoupper(sha1(sha1(trim($password), TRUE)));
  }
 }

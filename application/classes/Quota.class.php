@@ -1,10 +1,10 @@
 <?php
 
 /**
-*
-*/
+* Quota Class
+**/
 
-class Quota extends DatabaseObject{
- protected $name;
- protected $quota_type;
+abstract class Quota extends DatabaseObject {
+ abstract protected $name;
+ abstract protected $quota_type;
 }

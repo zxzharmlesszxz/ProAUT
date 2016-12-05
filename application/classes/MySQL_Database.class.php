@@ -1,6 +1,9 @@
 <?php
 
-// Create MySQLDatabase Class
+/**
+* MySQLDatabase Class
+**/
+
 class MySQL_Database extends Database{
 
     private $connection;

@@ -1,5 +1,9 @@
 <?php
 
+/**
+* Collection class
+**/
+
 class Collection {
  private $items = array();
 

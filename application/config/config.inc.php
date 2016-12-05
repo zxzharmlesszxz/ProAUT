@@ -1,8 +1,8 @@
 <?php
 
-/*
-ProAUT Project Configuration file
-*/
+/**
+* ProAUT Project Configuration file
+**/
 
 $config = array(
  'PROJECT_NAME' => 'ProFTPd Administrate Users Tool',
