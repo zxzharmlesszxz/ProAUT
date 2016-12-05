@@ -5,7 +5,5 @@
 **/
 
 abstract class Model {
-	abstract public function get_data() {
-		// todo
-	}
+	abstract public function get_data() {}
 }
