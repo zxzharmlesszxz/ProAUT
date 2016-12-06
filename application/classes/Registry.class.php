@@ -19,7 +19,8 @@ class Registry {
  }
 
  static public function _remove($key) {
-  return (isset(self::$store[$key]) && unset(self::$store[$key])) ? TRUE : FALSE;
+  unset(self::$store[$key]);
+  #return (isset(self::$store[$key]) && unset(self::$store[$key])) ? TRUE : FALSE;
  }
 }
 
