@@ -19,7 +19,7 @@ class Model_Users extends Model {
   return $user = $this->get_user($userid)->changeStatus();
  }
 
- public function add(array $user) {
+ public function create(array $user) {
   $user = User::add($user['login'], $user['password'], $user['username'], $user['email'], $user['homedir'], $user['shell'], $user['uid'], $user['gid']);
   $user->save();
   return $user;
