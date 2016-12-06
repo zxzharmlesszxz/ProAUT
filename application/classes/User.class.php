@@ -8,16 +8,16 @@ class User extends DatabaseObject {
  protected static $table_name = "users";
  protected static $db_fields = array('userid', 'login', 'password', 'username', 'email', 'uid', 'gid', 'homedir', 'shell', 'status');
 
- protected $userid;
- protected $login;
- protected $password;
- protected $username;
- protected $email;
- protected $uid;
- protected $gid;
- protected $homedir;
- protected $shell;
- protected $status;
+ public $userid;
+ public $login;
+ public $password;
+ public $username;
+ public $email;
+ public $uid;
+ public $gid;
+ public $homedir;
+ public $shell;
+ public $status;
 
  public static function add($login, $password, $username, $email, $homedir = NULL, $shell = NULL, $uid = NULL , $gid = NULL) {
   $new = new static;
