@@ -24,7 +24,6 @@ class Model_Users extends Model {
 
  public function create(array $user) {
   $user = User::add($user['login'], $user['password'], $user['username'], $user['email'], $user['homedir'], $user['shell'], $user['uid'], $user['gid']);
-  var_dump($user);
   return $user->save() ? $user : false;
  }
 
