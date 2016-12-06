@@ -9,6 +9,10 @@ abstract class DatabaseObject {
     private static $table_name;
     protected static $db_fields = array();
 
+    final public function __get($key) {
+     return self::$key;
+    }
+
     public static function find_all() {
         return self::find_by_sql("SELECT * FROM " . static::$table_name." ORDER BY ".static::$db_fields[0]." ASC");
     }
