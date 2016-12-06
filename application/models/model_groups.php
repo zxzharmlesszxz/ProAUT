@@ -11,8 +11,7 @@ class Model_Groups extends Model{
  }
 
  public function save(Group $group){
-  $group->save();
-  return $group;
+  return $group->save() ? $group : false;
  }
 
  public function delete($groupid){
@@ -21,8 +20,7 @@ class Model_Groups extends Model{
 
  public function create($groupname, $gid = NULL){
   $group = Group::add($groupname, $gid);
-  $group->save();
-  return $group;
+  return $group->save() ? $group : false;
  }
 
  public function addMember($groupid, $member){
