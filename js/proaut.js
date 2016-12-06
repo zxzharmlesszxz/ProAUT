@@ -11,7 +11,7 @@ $(document).ready(function(){
      type: 'post',
      success: function(){
       alert("Group #" + id + " has been removed.");
-      el.parent().parent().parent().hide();
+      el.parent().parent().parent().remove();
      }
     });
    };
