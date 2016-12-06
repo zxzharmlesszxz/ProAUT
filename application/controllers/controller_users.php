@@ -34,6 +34,7 @@ class Controller_Users extends Controller {
 
  public function action_delete() {
   $user = $this->model->get($this->query['userid']);
+  var_dump($user);
   $groups = Group::find_by_scope(array('members' => $user->login));
   var_dump($groups);
   $data = $this->model->delete($user);
