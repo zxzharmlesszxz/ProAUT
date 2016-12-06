@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // Group functions
   $(document).on('click','img.deleteGroup', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
@@ -74,6 +75,7 @@ $(document).ready(function(){
     });
   });
 
+  // Change status checkbox functions
   $(document).on('change',"input[type=checkbox]", function(event){
     var el = $(this);
      if(el.is(':checked')){
@@ -96,6 +98,7 @@ $(document).ready(function(){
     });
   });
 
+  // User functions
   $(document).on('click','#createUser', function(event){
     var table = $('#table'),
      form = $(this).parent(),
@@ -105,7 +108,7 @@ $(document).ready(function(){
     });
 
     $.ajax({
-     url: '/users/add/',
+     url: '/users/create/',
      dataType: 'json',
      data: send,
      type: 'post',
@@ -161,6 +164,7 @@ $(document).ready(function(){
     });
   });
 
+  // QuotaLimit functions
   $(document).on('click','#createQuotalimit', function(event){
     var table = $('#table'),
      form = $(this).parent(),
@@ -235,6 +239,7 @@ $(document).ready(function(){
     });
   });
 
+  // QuotaTally functions
   $(document).on('click','img.deleteQuotatally', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
