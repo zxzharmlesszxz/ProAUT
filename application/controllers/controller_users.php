@@ -37,7 +37,7 @@ class Controller_Users extends Controller {
   var_dump($user);
   $groups = Group::find_by_scope(array('members' => $user->login));
   var_dump($groups);
-  $data = $this->model->delete($user);
+  $data = $this->model->delete($user->userid);
   $this->view->generate('', 'ajax_view.php', $data);
  }
 
