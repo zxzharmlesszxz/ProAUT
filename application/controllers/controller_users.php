@@ -24,6 +24,7 @@ class Controller_Users extends Controller{
  }
 
  public function action_create(){
+  var_dump($this->query['user']);
   $data = $this->model->create($this->query['user']);
   $this->view->generate('', 'ajax_view.php', $data);
  }
