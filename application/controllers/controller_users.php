@@ -14,7 +14,7 @@ class Controller_Users extends Controller{
  }
 
  public function action_edit(){
-  $data = $this->model->get_user($this->query['userid']);
+  $data = $this->model->get($this->query['userid']);
   $this->view->generate('user_edit.php', 'template_view.php', $data);
  }
 
@@ -23,8 +23,8 @@ class Controller_Users extends Controller{
   $this->view->generate('user_changeStatus.php', 'ajax_view.php', $data);
  }
 
- public function action_add(){
-  $data = $this->model->add($this->query['user']);
+ public function action_create(){
+  $data = $this->model->create($this->query['user']);
   $this->view->generate('user_add.php', 'ajax_view.php', $data);
  }
 
