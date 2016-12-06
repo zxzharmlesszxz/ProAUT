@@ -21,8 +21,7 @@ class Model_Users extends Model {
 
  public function create(array $user) {
   $user = User::add($user['login'], $user['password'], $user['username'], $user['email'], $user['homedir'], $user['shell'], $user['uid'], $user['gid']);
-  $user->save();
-  return $user;
+  return $user->save() ? $user : false;
  }
 
  public function delete($userid) {
@@ -49,7 +48,6 @@ class Model_Users extends Model {
     $u->setPassword($u->password);
    }
   }
-  $u->save();
-  return $u;
+  return $u->save() ? $u : false;
  }
 }
