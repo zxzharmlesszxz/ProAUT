@@ -15,6 +15,10 @@ class Model_Users extends Model {
   return User::find_by_id($userid);
  }
 
+ public function save(User $user){
+  return $user->save() ? $user : false;
+ }
+ 
  public function changeStatus($userid) {
   return $user = $this->get_user($userid)->changeStatus();
  }
