@@ -20,8 +20,7 @@ class DatabaseObject {
 
     public static function find_by_scope($scopes) {
      $scope = array();
-     foreach($scopes as $key => $value)
-     {
+     foreach($scopes as $key => $value) {
       $scope[] = "$key = '".db()->escape_value($value)."'";
      }
      $scope = implode(' AND ', $scope);
@@ -31,8 +30,7 @@ class DatabaseObject {
 
     public static function find_by_like($scopes) {
      $scope = array();
-     foreach($scopes as $key => $value)
-     {
+     foreach($scopes as $key => $value) {
       $scope[] = "$key LIKE '%".db()->escape_value($value)."%'";
      }
      $scope = implode(' AND ', $scope);
@@ -86,7 +84,7 @@ class DatabaseObject {
     protected function sanitized_attributes() {
         $clean_attributes = array();
         foreach ($this->attributes() as $key => $value) {
-            if(is_array($value)) $value = implode(',', $value);
+            if (is_array($value)) $value = implode(',', $value);
             $clean_attributes[$key] = db()->escape_value($value);
         }
 
@@ -107,11 +105,11 @@ class DatabaseObject {
         /* new style */
     	$attribute_pairs = array();
         foreach ($attributes as $key => $value) {
-            if(is_int($value) or is_float($value)){
+            if (is_int($value) or is_float($value)) {
                 $attribute_pairs[] = "{$key}={$value}";
-            }elseif(is_bool($value)){
+            } elseif (is_bool($value)) {
                 $attribute_pairs[] = "{$key}=".(($value) ? "true" : "false");
-            }else{
+            } else {
                 $attribute_pairs[] = "{$key}=".((empty($value) && strlen($value) == 0 && $value != 'false') ? "NULL" : "'".$value."'");
             }
 
@@ -134,12 +132,9 @@ class DatabaseObject {
         $attribute_pairs = array();
         foreach ($attributes as $key => $value) {
             $value = (string)$value;
-	    if(empty($value) AND strlen($value) == 0)
-	    {
+	    if (empty($value) AND strlen($value) == 0) {
 	     $attribute_pairs[] = "{$key}=NULL";
-	    }
-	    else
-	    {
+	    } else {
              $attribute_pairs[] = "{$key}='{$value}'";
 	    }
         }
