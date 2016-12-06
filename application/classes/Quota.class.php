@@ -5,6 +5,6 @@
 **/
 
 abstract class Quota extends DatabaseObject {
- protected $name;
- protected $quota_type;
+ abstract protected $name;
+ abstract protected $quota_type;
 }
