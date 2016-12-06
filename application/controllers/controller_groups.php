@@ -37,8 +37,8 @@ class Controller_Groups extends Controller{
   $this->view->generate('', 'ajax_view.php', $data);
  }
 
- public function action_deleteMember(){
-  $data = (!empty($this->query['groupid'])) ? $this->model->deleteMember($this->query['groupid'], $this->query['member']) : NULL;
+ public function action_removeMember(){
+  $data = (!empty($this->query['groupid'])) ? $this->model->removeMember($this->query['groupid'], $this->query['member']) : NULL;
   $this->view->generate('', 'ajax_view.php', $data);
  }
 }
