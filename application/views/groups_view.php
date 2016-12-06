@@ -22,19 +22,19 @@
 
  foreach ($data->keys() as $item) {
   $row = $data->getItem($item);
-  echo <<EOL
+  foreach (explode(',', $row->members) as $member) {
+   $members .= empty($member) ? '' : '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
+  }
+  echo <<EOT
    <tr>
     <td>$row->groupname<span class="actions">
      <img data-id="$row->groupid" class="deleteGroup" src="/images/delete.png" title="Delete" alt="Delete"/>
      <img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href='/groups/edit/?groupid=$row->groupid'"/></span>
     </td>
     <td>$row->gid</td>
-   <td>
-EOL
-  foreach (explode(',', $row->members) as $member) {
-   echo empty($member) ? '' : '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
-  }
-  echo '</td></tr>';
+   <td>$members</td>
+  </tr>
+EOT;
  }
  
 ?>
