@@ -10,7 +10,7 @@ abstract class DatabaseObject {
     protected static $db_fields = array();
 
     final public function __get($key) {
-     return self::$key;
+     return $this->$key;
     }
 
     public static function find_all() {
