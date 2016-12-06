@@ -19,26 +19,26 @@ class Controller_Groups extends Controller{
 
  public function action_save(){
   $data = $this->model->save($this->query['groupid']);
-  $this->view->generate('group_save.php', 'template_view.php', $data);
+  $this->view->generate('', 'template_view.php', $data);
  }
 
  public function action_delete(){
   $data = $this->model->delete($this->query['groupid']);
-  $this->view->generate('group_delete.php', 'ajax_view.php', $data);
+  $this->view->generate('', 'ajax_view.php', $data);
  }
 
  public function action_create(){
   $data = (!empty($this->query['groupname'])) ? $this->model->create($this->query['groupname'], $this->query['gid']) : NULL;
-  $this->view->generate('group_create.php', 'ajax_view.php', $data);
+  $this->view->generate('', 'ajax_view.php', $data);
  }
 
  public function action_addMember(){
   $data = (!empty($this->query['groupid'])) ? $this->model->addMember($this->query['groupid'], $this->query['member']) : NULL;
-  $this->view->generate('group_addMember.php', 'ajax_view.php', $data);
+  $this->view->generate('', 'ajax_view.php', $data);
  }
 
  public function action_deleteMember(){
   $data = (!empty($this->query['groupid'])) ? $this->model->deleteMember($this->query['groupid'], $this->query['member']) : NULL;
-  $this->view->generate('group_deleteMember.php', 'ajax_view.php', $data);
+  $this->view->generate('', 'ajax_view.php', $data);
  }
 }
