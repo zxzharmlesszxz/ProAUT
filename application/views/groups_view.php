@@ -25,7 +25,7 @@
   foreach (explode(',', $row->members) as $member) {
    $members .= empty($member) ? '' : '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
   }
-  echo <<EOT
+  echo <<<EOT
    <tr>
     <td>$row->groupname<span class="actions">
      <img data-id="$row->groupid" class="deleteGroup" src="/images/delete.png" title="Delete" alt="Delete"/>
