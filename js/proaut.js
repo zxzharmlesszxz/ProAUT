@@ -43,7 +43,7 @@ $(document).ready(function(){
       var user = $(this),
         username = user.val();
       $.ajax({
-       url: '/groups/deleteMember/',
+       url: '/groups/removeMember/',
        data: "groupid="+id+"&member="+username,
        type: 'post',
        success: function(){
