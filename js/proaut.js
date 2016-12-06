@@ -68,9 +68,11 @@ $(document).ready(function(){
      data: send,
      type: 'post',
      success: function(data){
-      table.append('<tr><td>'+data['groupname']+'<span class="actions">'+
-  '<img data-id="'+data['groupid']+'" class="deleteGroup" src="/images/delete.png" title="Delete" alt="Delete"/>'+
-  '<img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/groups/edit/?groupid='+data['groupid']+'\'"/></span></td><td>'+data['gid']+'</td><td></td></tr>');
+       if (data != false) {
+        table.append('<tr><td>'+data['groupname']+'<span class="actions"><img data-id="'+data['groupid']+'" class="deleteGroup" src="/images/delete.png" title="Delete" alt="Delete"/><img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/groups/edit/?groupid='+data['groupid']+'\'"/></span></td><td>'+data['gid']+'</td><td></td></tr>');
+       } else {
+        alert('Error in group create!');
+       }
      }
     });
   });
