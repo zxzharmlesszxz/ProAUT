@@ -10,7 +10,7 @@ $(document).ready(function(){
      data: "groupid="+id,
      type: 'post',
      success: function(){
-      setTimeout(el.parent().parent().replace('<td colspan=3>Group #' + id + ' has been removed.</td>'), 4000);
+      setTimeout("el.parent().parent().replace('<td colspan=3>Group #' + id + ' has been removed.</td>')", 4000);
       el.parent().parent().parent().remove();
      }
     });
