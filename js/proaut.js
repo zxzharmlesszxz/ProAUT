@@ -10,7 +10,7 @@ $(document).ready(function(){
      data: "groupid="+id,
      type: 'post',
      success: function(){
-      el.parent().parent().parent().html('<td colspan=3>Group #' + id + ' has been removed.</td>');
+      el.parent().parent().parent().css('background-color',"red");
       setTimeout("el.parent().parent().parent().remove()", 4000);
      }
     });
