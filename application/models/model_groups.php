@@ -29,7 +29,7 @@ class Model_Groups extends Model{
 
  public function addMember($groupid, $member){
   $group = Group::find_by_id($groupid);
-  $group->addMember(trim($_REQUEST['member']));
+  $group->addMember(trim($member));
   return $group->save();
  }
 
