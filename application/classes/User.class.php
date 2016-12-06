@@ -19,10 +19,6 @@ class User extends DatabaseObject {
  protected $shell;
  protected $status;
 
- final public function __get($key) {
-  return $this->$key;
- }
-
  public static function add($login, $password, $username, $email, $homedir = NULL, $shell = NULL, $uid = NULL , $gid = NULL) {
   $new = new static;
   $new->login = trim($login);
