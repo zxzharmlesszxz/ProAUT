@@ -33,7 +33,10 @@ class Controller_Users extends Controller {
  }
 
  public function action_delete() {
-  $data = $this->model->delete($this->query['userid']);
+  $user = $this->model->get($this->query['userid']);
+  $groups = Group::find_by_scope(array('members' => $user->login));
+  var_dump($groups);
+  $data = $this->model->delete($user);
   $this->view->generate('', 'ajax_view.php', $data);
  }
 
