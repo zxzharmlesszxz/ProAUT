@@ -3,7 +3,11 @@
 class Model_Groups extends Model{
  
  public function get_data(){
-  return Group::find_all();
+  $groups = new Collection;
+  foreach (Group::find_all() as $group) {
+   $groups->addItem($group, $group->groupid);
+  }
+  return $groups;
  }
 
  public function get($groupid){
