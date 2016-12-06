@@ -136,7 +136,7 @@ $(document).ready(function(){
      type: 'post',
      success: function(){
       alert(result);
-      el.parent().parent().parent().hide();
+      el.parent().parent().parent().remove();
      }
     });
    };
@@ -213,7 +213,7 @@ $(document).ready(function(){
      type: 'post',
      success: function(){
       alert(result);
-      el.parent().parent().parent().hide();
+      el.parent().parent().parent().remove();
      }
     });
    };
@@ -251,7 +251,7 @@ $(document).ready(function(){
      type: 'post',
      success: function(){
       alert(result);
-      el.parent().parent().parent().hide();
+      el.parent().parent().parent().remove();
      }
     });
    };
