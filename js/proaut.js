@@ -115,14 +115,11 @@ $(document).ready(function(){
      data: send,
      type: 'post',
      success: function(data){
-      table.append('<tr><td>'+data['login']+'<span class="actions">'+
-  '<img data-id="'+data['userid']+'" class="deleteUser" src="/images/delete.png" title="Delete" alt="Delete"/>'+
-  '<img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/users/edit/?userid='+data['userid']+'\'"/></span></td>'+
-  '<td>'+data['username']+'</td>'+
-  '<td>'+data['email']+'</td>'+
-  '<td>'+data['homedir']+'</td>'+
-  '<td><input class="status" type="checkbox" data-id="'+data['userid']+'" '+((data['status'] != 0)?'checked':'')+' /></td>'+
-  '</tr>');
+       if (data != false) {
+         table.append('<tr><td>'+data['login']+'<span class="actions"><img data-id="'+data['userid']+'" class="deleteUser" src="/images/delete.png" title="Delete" alt="Delete"/><img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/users/edit/?userid='+data['userid']+'\'"/></span></td><td>'+data['username']+'</td><td>'+data['email']+'</td><td>'+data['homedir']+'</td><td><input class="status" type="checkbox" data-id="'+data['userid']+'" '+((data['status'] != 0)?'checked':'')+' /></td></tr>');
+       } else {
+        alert('Error in user create!');
+       }
      }
     });
   });
