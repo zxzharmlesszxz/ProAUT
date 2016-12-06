@@ -11,7 +11,7 @@ class Model_Users extends Model {
   return $users;
  }
 
- public function get_user($userid) {
+ public function get($userid) {
   return User::find_by_id($userid);
  }
 
