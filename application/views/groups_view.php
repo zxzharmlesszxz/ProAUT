@@ -20,14 +20,14 @@
 <tbody>
 <?php
 
- foreach($data as $row)
- {
+ foreach ($data->keys() as $item) {
+  $row = $data->getItem($item);
   echo '<tr><td>'.$row->groupname.'<span class="actions">
   <img data-id="'.$row->groupid.'" class="deleteGroup" src="/images/delete.png" title="Delete" alt="Delete"/>
   <img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/groups/edit/?groupid='.$row->groupid.'\'"/></span></td><td>';
   echo $row->gid.'</td><td>';
-  foreach(explode(',', $row->members) as $member){
-   echo '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
+  foreach (explode(',', $row->members) as $member) {
+   echo empty($member) ? '' : '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
   }
   echo '</td></tr>';
  }
@@ -36,4 +36,3 @@
  </tbody>
 </table>
 </p>
-
