@@ -4,21 +4,21 @@
 * DatabaseObject Class
 **/
 
-class DatabaseObject {
+abstract class DatabaseObject {
 
-    private static $table_name;
-    protected static $db_fields = array();
+    abstract private static $table_name;
+    abstract protected static $db_fields = array();
 
-    public static function find_all() {
+    abstract public static function find_all() {
         return self::find_by_sql("SELECT * FROM " . static::$table_name." ORDER BY ".static::$db_fields[0]." ASC");
     }
 
-    public static function find_by_id($id = 0) {
+    abstract public static function find_by_id($id = 0) {
         $result_array = self::find_by_sql("SELECT * FROM " . static::$table_name . " WHERE ".static::$db_fields[0]."=" . db()->escape_value($id) . " LIMIT 1");
         return !empty($result_array) ? $result_array[0] : false;
     }
 
-    public static function find_by_scope($scopes) {
+    abstract public static function find_by_scope($scopes) {
      $scope = array();
      foreach($scopes as $key => $value) {
       $scope[] = "$key = '".db()->escape_value($value)."'";
@@ -28,7 +28,7 @@ class DatabaseObject {
      return !empty($result_array) ? $result_array : false;
     }
 
-    public static function find_by_like($scopes) {
+    abstract public static function find_by_like($scopes) {
      $scope = array();
      foreach($scopes as $key => $value) {
       $scope[] = "$key LIKE '%".db()->escape_value($value)."%'";
@@ -38,7 +38,7 @@ class DatabaseObject {
      return !empty($result_array) ? $result_array : false;
     }
 
-    public static function find_by_sql($sql = "") {
+    abstract public static function find_by_sql($sql = "") {
         $result_set = db()->query($sql);
         $object_array = array();
         while ($row = db()->fetch_array($result_set)) {
@@ -47,14 +47,14 @@ class DatabaseObject {
         return $object_array;
     }
 
-    public static function count_all() {
+    abstract public static function count_all() {
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
         $result_set = db()->query($sql);
         $row = db()->fetch_array($result_set);
         return array_shift($row);
     }
 
-    private static function instantiate($record) {
+    abstract private static function instantiate($record) {
         $object = new static;
         foreach ($record as $attribute => $value) {
             if ($object->has_attribute($attribute)) {
@@ -64,13 +64,13 @@ class DatabaseObject {
         return $object;
     }
 
-    private function has_attribute($attribute) {
+    abstract private function has_attribute($attribute) {
         // We don't care about the value, we just want to know if the key exists
         // Will return true or false
         return array_key_exists($attribute, $this->attributes());
     }
 
-    protected function attributes() {
+    abstract protected function attributes() {
         // return an array of attribute keys and their values
         $attributes = array();
         foreach (static::$db_fields as $field) {
@@ -81,7 +81,7 @@ class DatabaseObject {
         return $attributes;
     }
 
-    protected function sanitized_attributes() {
+    abstract protected function sanitized_attributes() {
         $clean_attributes = array();
         foreach ($this->attributes() as $key => $value) {
             if (is_array($value)) $value = implode(',', $value);
@@ -91,13 +91,13 @@ class DatabaseObject {
         return $clean_attributes;
     }
 
-    public function save() {
+    abstract public function save() {
         // A new record won't have an id yet.
         $id = static::$db_fields[0];
         return isset($this->$id) ? $this->update() : $this->create();
     }
 
-    public function create() {
+    abstract public function create() {
     	$id = static::$db_fields[0];
 
         $attributes = $this->sanitized_attributes();
@@ -125,7 +125,7 @@ class DatabaseObject {
         }
     }
 
-    public function update() {
+    abstract public function update() {
         $id = static::$db_fields[0];
 
         $attributes = $this->sanitized_attributes();
@@ -145,7 +145,7 @@ class DatabaseObject {
         return (db()->affected_rows() == 1) ? true : false;
     }
 
-    public function delete() {
+    abstract public function delete() {
     	$id = static::$db_fields[0];
 
         $sql = "DELETE FROM " . static::$table_name;
