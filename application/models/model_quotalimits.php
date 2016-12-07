@@ -3,7 +3,11 @@
 class Model_Quotalimits extends Model {
 
  public function get_data() {
-  return QuotaLimit::find_all();
+  $quotalimits = new Collection;
+  foreach (QuotaLimit::find_all() as $quotalimit) {
+   $quotalimits->addItem($quotalimit, $quotalimit->quotalimitid);
+  }
+  return $quotalimits;
  }
 
  public function get(integer $quotalimitid) {
