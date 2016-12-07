@@ -24,6 +24,7 @@ class Model_Quotalimits extends Model {
 
  public function create(array $quotalimit) {
   $new = QuotaLimit::add($quotalimit['name'], $quotalimit['quota_type'], $quotalimit['per_session'], $quotalimit['limit_type'], $quotalimit['bytes_in_avail'], $quotalimit['bytes_out_avail'], $quotalimit['bytes_xfer_avail'], $quotalimit['files_in_avail'], $quotalimit['files_out_avail'], $quotalimit['files_xfer_avail']);
+  var_dump($new);
   return $new->save() ? $new : NULL;
  }
 }
