@@ -1,32 +1,26 @@
 <?php
 
-class Model_Quotalimits extends Model{
+class Model_Quotalimits extends Model {
 
- public function get_data(){
+ public function get_data() {
   return QuotaLimit::find_all();
  }
 
- public function get_quotalimit($quotalimitid){
+ public function get(integer $quotalimitid) {
   return QuotaLimit::find_by_id($quotalimitid);
  }
 
- public function save_quotalimit(QuotaLimit $quotalimit){
+ public function save(QuotaLimit $quotalimit) {
   $quotalimit->save();
   return $quotalimit;
  }
 
- public function delete_quotalimit($quotalimitid){
+ public function delete(integer $quotalimitid) {
   return QuotaLimit::find_by_id($quotalimitid)->delete();
  }
 
- public function create_quotalimit(array $quotalimit){
-  $new = QuotaLimit::add(
-		$quotalimit['name'], $quotalimit['quota_type'],
-		$quotalimit['per_session'], $quotalimit['limit_type'],
-		$quotalimit['bytes_in_avail'], $quotalimit['bytes_out_avail'],
-		$quotalimit['bytes_xfer_avail'], $quotalimit['files_in_avail'],
-		$quotalimit['files_out_avail'], $quotalimit['files_xfer_avail']
-	);
+ public function create(array $quotalimit) {
+  $new = QuotaLimit::add($quotalimit['name'], $quotalimit['quota_type'], $quotalimit['per_session'], $quotalimit['limit_type'], $quotalimit['bytes_in_avail'], $quotalimit['bytes_out_avail'], $quotalimit['bytes_xfer_avail'], $quotalimit['files_in_avail'], $quotalimit['files_out_avail'], $quotalimit['files_xfer_avail']);
   $new->save();
   return $new;
  }
