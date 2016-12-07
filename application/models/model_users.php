@@ -19,7 +19,7 @@ class Model_Users extends Model {
  }
  
  public function changeStatus($userid) {
-  return $user = $this->get_user($userid)->changeStatus();
+  return $user = $this->get($userid)->changeStatus();
  }
 
  public function create(array $user) {
