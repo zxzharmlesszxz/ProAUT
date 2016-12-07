@@ -15,8 +15,7 @@ class Model_Quotalimits extends Model {
  }
 
  public function save(QuotaLimit $quotalimit) {
-  $quotalimit->save();
-  return $quotalimit;
+  return $quotalimit->save() ? $quotalimit : false;
  }
 
  public function delete(integer $quotalimitid) {
