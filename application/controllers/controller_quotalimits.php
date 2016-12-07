@@ -29,6 +29,7 @@ class Controller_Quotalimits extends Controller{
 
  public function action_create(){
   $data = (!empty($this->query['quotalimit'])) ? $this->model->create($this->query['quotalimit']) : NULL;
+  var_dump($data);
   $this->view->generate('', 'ajax_view.php', $data);
  }
 }
