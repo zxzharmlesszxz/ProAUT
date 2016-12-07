@@ -185,18 +185,11 @@ $(document).ready(function(){
      data: send,
      type: 'post',
      success: function(data){
-      table.append('<tr><td>'+data['name']+'<span class="actions">'+
-  '<img data-id="'+data['quotalimitid']+'" class="deleteQuotalimit" src="/images/delete.png" title="Delete" alt="Delete"/>'+
-  '<img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/quotalimits/edit/?quotalimitid='+data['quotalimitid']+'\'"/></span></td><td>'+data['quota_type']+
-  '</td><td>'+data['limit_type']+
-  '</td><td>'+data['per_session']+
-  '</td><td>'+data['bytes_in_avail']+
-  '</td><td>'+data['bytes_out_avail']+
-  '</td><td>'+data['bytes_xfer_avail']+
-  '</td><td>'+data['files_in_avail']+
-  '</td><td>'+data['files_out_avail']+
-  '</td><td>'+data['files_xfer_avail']+
-  '</td></tr>');
+      if (data != false) {
+       table.append('<tr><td>'+data['name']+'<span class="actions"><img data-id="'+data['quotalimitid']+'" class="deleteQuotalimit" src="/images/delete.png" title="Delete" alt="Delete"/><img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/quotalimits/edit/?quotalimitid='+data['quotalimitid']+'\'"/></span></td><td>'+data['quota_type']+'</td><td>'+data['limit_type']+'</td><td>'+data['per_session']+'</td><td>'+data['bytes_in_avail']+'</td><td>'+data['bytes_out_avail']+'</td><td>'+data['bytes_xfer_avail']+'</td><td>'+data['files_in_avail']+'</td><td>'+data['files_out_avail']+'</td><td>'+data['files_xfer_avail']+'</td></tr>');
+      } else {
+       alert('Error while adding new QuotaLimit');
+      }
      }
     });
   });
