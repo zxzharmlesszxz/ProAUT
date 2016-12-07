@@ -150,7 +150,6 @@ $(document).ready(function(){
      form.children().find('input').each(function(){
         send += $(this).prop('name')+'='+$(this).val()+'&';
     });
-     alert(send);
 
     $.ajax({
      url: '/users/update/',
