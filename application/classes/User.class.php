@@ -38,7 +38,7 @@ class User extends DatabaseObject {
   return $this->save();
  }
 
- protected function setPassword($password) {
+ public function setPassword($password) {
   $this->password = "{md5}".base64_encode(pack("H*", md5(trim($password))));
   //$this->password = '*'.strtoupper(sha1(sha1(trim($password), TRUE)));
  }
