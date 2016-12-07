@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div id="footer">
-			<a href="/">ProAUT</a> &copy; 2015</a>
+			<a href="/">ProAUT</a> &copy; 2015
 		</div>
   <script>
    $(document).ready(function(){
