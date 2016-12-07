@@ -39,7 +39,7 @@ class User extends DatabaseObject {
  }
 
  protected function setPassword($password) {
-  //$this->password = md5(trim($password));
-  $this->password = '*'.strtoupper(sha1(sha1(trim($password), TRUE)));
+  $this->password = md5(trim($password));
+  //$this->password = '*'.strtoupper(sha1(sha1(trim($password), TRUE)));
  }
 }
