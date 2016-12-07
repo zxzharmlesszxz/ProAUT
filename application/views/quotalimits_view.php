@@ -50,24 +50,28 @@
 </tfoot>
 <tbody>
 <?php
-
- foreach($data as $row){
-  echo '<tr>
-   <td>'.$row->name.'<span class="actions">
-  <img data-id="'.$row->quotalimitid.'" class="deleteQuotalimit" src="/images/delete.png" title="Delete" alt="Delete"/>
-  <img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/quotalimits/edit/?quotalimitid='.$row->quotalimitid.'\'"/></span></td>
-   <td>'.$row->quota_type.'</td>
-   <td>'.$row->limit_type.'</td>
-   <td>'.$row->per_session.'</td>
-   <td>'.$row->bytes_in_avail.'</td>
-   <td>'.$row->bytes_out_avail.'</td>
-   <td>'.$row->bytes_xfer_avail.'</td>
-   <td>'.$row->files_in_avail.'</td>
-   <td>'.$row->files_out_avail.'</td>
-   <td>'.$row->files_xfer_avail.'</td>
-  </tr>';
+ foreach ($data->keys() as $item) {
+  $row = $data->getItem($item);
+  echo <<<EOT
+<tr>
+ <td>$row->name
+  <span class="actions">
+   <img data-id="$row->quotalimitid" class="deleteQuotalimit" src="/images/delete.png" title="Delete" alt="Delete"/>
+   <img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href='/quotalimits/edit/?quotalimitid=$row->quotalimitid'"/>
+  </span>
+ </td>
+ <td>$row->quota_type</td>
+ <td>$row->limit_type</td>
+ <td>$row->per_session</td>
+ <td>$row->bytes_in_avail</td>
+ <td>$row->bytes_out_avail</td>
+ <td>$row->bytes_xfer_avail</td>
+ <td>$row->files_in_avail</td>
+ <td>$row->files_out_avail</td>
+ <td>$row->files_xfer_avail</td>
+</tr>
+EOT;
  }
- 
 ?>
  </tbody>
 </table>
