@@ -162,6 +162,68 @@ $(document).ready(function(){
     });
   });
 
+  // User functions
+  $(document).on('click','#createAdmin', function(event){
+    var table = $('#table'),
+     form = $(this).parent(),
+     send = '';
+     form.children('input').each(function(){
+        send += $(this).prop('name')+'='+$(this).val()+'&';
+    });
+
+    $.ajax({
+     url: '/admins/create/',
+     dataType: 'json',
+     data: send,
+     type: 'post',
+     success: function(data){
+       if (data != false) {
+         table.append('<tr><td>'+data['login']+'<span class="actions"><img data-id="'+data['adminid']+'" class="deleteAdmin" src="/images/delete.png" title="Delete" alt="Delete"/><img src="/images/edit.png" title="Edit" alt="Edit" onclick="location.href=\'/admins/edit/?adminid='+data['adminid']+'\'"/></span></td><td>'+data['username']+'</td><td>'+data['email']+'</td><td><input class="status" type="checkbox" data-id="'+data['adminid']+'" '+((data['status'] != 0)?'checked':'')+' /></td></tr>');
+       } else {
+        alert('Error in admin create!');
+       }
+     }
+    });
+  });
+
+  $(document).on('click','img.deleteAdmin', function(event){
+   if(confirm('Are you shure?')){
+    var el = $(this),
+     id = el.data('id'),
+     result = "Admin #" + id + " has been removed.";
+
+    $.ajax({
+     url: '/admins/delete/',
+     data: "userid="+id,
+     type: 'post',
+     success: function(){
+      alert(result);
+      el.parent().parent().parent().remove();
+     }
+    });
+   };
+  });
+
+  $(document).on('click','#saveAdmin', function(event){
+    var table = $('#table'),
+     form = $(this).parent().parent().parent(),
+     send = '',
+     p = form.parent().parent();
+     form.children().find('input').each(function(){
+        send += $(this).prop('name')+'='+$(this).val()+'&';
+    });
+
+    $.ajax({
+     url: '/admins/update/',
+     dataType: 'json',
+     data: send,
+     type: 'post',
+     success: function(data){
+      p.prepend('<b>Admin data updated!</b>');
+     }
+    });
+  });
+
   // QuotaLimit functions
   $(document).on('click','#createQuotalimit', function(event){
     var table = $('#table'),
