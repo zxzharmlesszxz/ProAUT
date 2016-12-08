@@ -57,7 +57,7 @@
 			</div>
 		</div>
 		<div id="footer">
-			<a href="/">ProAUT</a> &copy; 2015
+			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
 		</div>
   <script>
    $(document).ready(function(){
