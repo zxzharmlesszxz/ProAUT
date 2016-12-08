@@ -19,16 +19,16 @@ class Controller_Quotalimits extends Controller{
 
  public function action_save(){
   $data = $this->model->save($this->query['quotalimitid']);
-  $this->view->generate('', 'template_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_delete(){
   $data = $this->model->delete($this->query['quotalimitid']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_create(){
   $data = (!empty($this->query['quotalimit'])) ? $this->model->create($this->query['quotalimit']) : NULL;
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 }

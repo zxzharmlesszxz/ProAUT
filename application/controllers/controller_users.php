@@ -24,12 +24,12 @@ class Controller_Users extends Controller {
 
  public function action_changeStatus() {
   $data = $this->model->changeStatus($this->query['userid']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_create() {
   $data = $this->model->create($this->query['user']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_delete() {
@@ -39,11 +39,11 @@ class Controller_Users extends Controller {
    $group->save();
   }
   $data = $this->model->delete($user->userid);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_update() {
   $data = $this->model->update($this->query['user']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 }

@@ -19,26 +19,26 @@ class Controller_Groups extends Controller{
 
  public function action_save(){
   $data = $this->model->save($this->query['groupid']);
-  $this->view->generate('', 'template_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_delete(){
   $data = $this->model->delete($this->query['groupid']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_create(){
   $data = (!empty($this->query['groupname'])) ? $this->model->create($this->query['groupname'], $this->query['gid']) : NULL;
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_addMember(){
   $data = (!empty($this->query['groupid'])) ? $this->model->addMember($this->query['groupid'], $this->query['member']) : NULL;
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_removeMember(){
   $data = (!empty($this->query['groupid'])) ? $this->model->removeMember($this->query['groupid'], $this->query['member']) : NULL;
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 }
