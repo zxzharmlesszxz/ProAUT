@@ -24,22 +24,22 @@ class Controller_Admins extends Controller {
 
  public function action_changeStatus() {
   $data = $this->model->changeStatus($this->query['adminid']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_create() {
   $data = $this->model->create($this->query['admin']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_delete() {
   $admin = $this->model->get($this->query['adminid']);
   $data = $this->model->delete($admin->adminid);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 
  public function action_update() {
   $data = $this->model->update($this->query['admin']);
-  $this->view->generate('', 'ajax_view.php', $data);
+  $this->view->ajax($data);
  }
 }
