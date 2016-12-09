@@ -4,7 +4,7 @@
 * Controller Class
 **/
 
-class Controller {
+abstract class Controller {
 	
 	public $model;
 	public $view;
