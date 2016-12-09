@@ -5,10 +5,11 @@
 **/
 
 class Controller_Admins extends Controller {
-
+ protected $query;
+ 
  public function __construct() {
+  parrent::__construct();
   $this->model = new Model_Admins();
-  $this->view = new View();
   $this->query = $_REQUEST;
  }
 
