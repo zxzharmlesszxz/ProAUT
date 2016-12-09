@@ -11,6 +11,6 @@ class Model_Quotatallies extends Model {
  }
 
  public function delete(integer $quotatallyid) {
-  return QuotaTally::find_by_id($quotatallyid)->delete();
+  return $this->get_data->getItem($quotatallyid)->delete();
  }
 }
