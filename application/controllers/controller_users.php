@@ -19,12 +19,12 @@ class Controller_Users extends Controller {
  }
 
  public function action_edit() {
-  $data = $this->model->get($this->query['userid']);
+  $data = $this->model->get(intval($this->query['userid']));
   $this->view->generate('user_edit.php', 'template_view.php', $data);
  }
 
  public function action_changeStatus() {
-  $data = $this->model->changeStatus($this->query['userid']);
+  $data = $this->model->changeStatus(intval($this->query['userid']));
   $this->view->ajax($data);
  }
 
@@ -34,12 +34,12 @@ class Controller_Users extends Controller {
  }
 
  public function action_delete() {
-  $user = $this->model->get($this->query['userid']);
+  $user = $this->model->get(intval($this->query['userid']));
   foreach (Group::find_by_like(array('members' => $user->login)) as $group) {
    $group->delMember($user->login);
    $group->save();
   }
-  $data = $this->model->delete($user->userid);
+  $data = $this->model->delete(intval($user->userid));
   $this->view->ajax($data);
  }
 
