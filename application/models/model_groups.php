@@ -11,7 +11,7 @@ class Model_Groups extends Model{
  }
 
  public function get($groupid){
-  return Group::find_by_id($groupid);
+  return $this->get_data->getItem($groupid);
  }
 
  public function save(Group $group){
@@ -19,7 +19,7 @@ class Model_Groups extends Model{
  }
 
  public function delete($groupid){
-  return Group::find_by_id($groupid)->delete();
+  return $this->get_data->getItem($groupid)->delete();
  }
 
  public function create($groupname, $gid = NULL){
@@ -28,13 +28,13 @@ class Model_Groups extends Model{
  }
 
  public function addMember($groupid, $member){
-  $group = Group::find_by_id($groupid);
+  $group = $this->get_data->getItem($groupid);
   $group->addMember(trim($member));
   return $group->save();
  }
 
  public function removeMember($groupid, $member){
-  $group = Group::find_by_id($groupid);
+  $group = $this->get_data->getItem($groupid);
   $group->delMember($member);
   return $group->save();
  }
