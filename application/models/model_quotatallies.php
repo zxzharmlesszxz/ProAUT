@@ -10,7 +10,7 @@ class Model_Quotatallies extends Model {
   return $quotatallys;
  }
 
- public function delete(integer $quotatallyid) {
+ public function delete($quotatallyid) {
   return $this->get_data->getItem($quotatallyid)->delete();
  }
 }
