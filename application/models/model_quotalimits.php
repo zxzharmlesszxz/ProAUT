@@ -10,7 +10,7 @@ class Model_Quotalimits extends Model {
   return $quotalimits;
  }
 
- public function get(integer $quotalimitid) {
+ public function get($quotalimitid) {
   return $this->get_data->getItem($quotalimitid);
  }
 
@@ -18,7 +18,7 @@ class Model_Quotalimits extends Model {
   return $quotalimit->save() ? $quotalimit : false;
  }
 
- public function delete(integer $quotalimitid) {
+ public function delete($quotalimitid) {
   return $this->get_data->getItem($quotalimitid)->delete();
  }
 
