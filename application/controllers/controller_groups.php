@@ -1,9 +1,11 @@
 <?php
 
 class Controller_Groups extends Controller{
+ protected $query;
+ 
  public function __construct(){
+  parent::__construct();
   $this->model = new Model_Groups();
-  $this->view = new View();
   $this->query = $_REQUEST;
  }
 
