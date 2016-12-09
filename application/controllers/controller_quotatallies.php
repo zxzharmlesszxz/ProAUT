@@ -15,7 +15,7 @@ class Controller_Quotatallies extends Controller{
  }
 
  public function action_delete(){
-  $data = $this->model->delete_quotatally($this->query['quotatallyid']);
+  $data = $this->model->delete_quotatally(intval($this->query['quotatallyid']));
   $this->view->ajax($data);
  }
 }
