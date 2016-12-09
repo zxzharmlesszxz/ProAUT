@@ -4,7 +4,7 @@ class Controller_Quotalimits extends Controller{
  protected $query;
  
  public function __construct(){
-  parent::construct();
+  parent::__construct();
   $this->model = new Model_Quotalimits();
   $this->query = $_REQUEST;
  }
