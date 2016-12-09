@@ -19,12 +19,12 @@ class Controller_Admins extends Controller {
  }
 
  public function action_edit() {
-  $data = $this->model->get($this->query['adminid']);
+  $data = $this->model->get(intval($this->query['adminid']));
   $this->view->generate('admin_edit.php', 'template_view.php', $data);
  }
 
  public function action_changeStatus() {
-  $data = $this->model->changeStatus($this->query['adminid']);
+  $data = $this->model->changeStatus(intval($this->query['adminid']));
   $this->view->ajax($data);
  }
 
@@ -34,8 +34,8 @@ class Controller_Admins extends Controller {
  }
 
  public function action_delete() {
-  $admin = $this->model->get($this->query['adminid']);
-  $data = $this->model->delete($admin->adminid);
+  $admin = $this->model->get(intval($this->query['adminid']));
+  $data = $this->model->delete(intval($admin->adminid));
   $this->view->ajax($data);
  }
 
