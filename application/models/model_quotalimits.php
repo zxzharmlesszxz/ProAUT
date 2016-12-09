@@ -11,7 +11,7 @@ class Model_Quotalimits extends Model {
  }
 
  public function get(integer $quotalimitid) {
-  return QuotaLimit::find_by_id($quotalimitid);
+  return $this->get_data->getItem($quotalimitid);
  }
 
  public function save(QuotaLimit $quotalimit) {
@@ -19,7 +19,7 @@ class Model_Quotalimits extends Model {
  }
 
  public function delete(integer $quotalimitid) {
-  return QuotaLimit::find_by_id($quotalimitid)->delete();
+  return $this->get_data->getItem($quotalimitid)->delete();
  }
 
  public function create(array $quotalimit) {
