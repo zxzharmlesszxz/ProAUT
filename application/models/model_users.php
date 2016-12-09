@@ -11,7 +11,7 @@ class Model_Users extends Model {
  }
 
  public function get($userid) {
-  return $this->get_data->getItem($userid);
+  return $this->get_data()->getItem($userid);
  }
 
  public function save(User $user){
@@ -28,7 +28,7 @@ class Model_Users extends Model {
  }
 
  public function delete($userid) {
-  return $this->get_data->getItem($userid)->delete();
+  return $this->get_data()->getItem($userid)->delete();
  }
 
  public function update(array $user) {
