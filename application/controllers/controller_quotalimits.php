@@ -1,9 +1,11 @@
 <?php
 
 class Controller_Quotalimits extends Controller{
+ protected $query;
+ 
  public function __construct(){
+  parent::construct();
   $this->model = new Model_Quotalimits();
-  $this->view = new View();
   $this->query = $_REQUEST;
  }
 
