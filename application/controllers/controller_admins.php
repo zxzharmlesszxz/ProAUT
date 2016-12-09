@@ -8,7 +8,7 @@ class Controller_Admins extends Controller {
  protected $query;
  
  public function __construct() {
-  parrent::__construct();
+  parent::__construct();
   $this->model = new Model_Admins();
   $this->query = $_REQUEST;
  }
