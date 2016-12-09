@@ -1,10 +1,11 @@
 <?php
 
 class Controller_Quotatallies extends Controller{
+ protected $query;
 
  public function __construct(){
+  parent::__construct();
   $this->model = new Model_Quotatallies();
-  $this->view = new View();
   $this->query = $_REQUEST;
  }
 
