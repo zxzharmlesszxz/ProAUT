@@ -15,32 +15,32 @@ class Controller_Groups extends Controller{
  }
 
  public function action_edit(){
-  $data = $this->model->get($this->query['groupid']);
+  $data = $this->model->get(intval($this->query['groupid']));
   $this->view->generate('group_edit.php', 'template_view.php', $data);
  }
 
  public function action_save(){
-  $data = $this->model->save($this->query['groupid']);
+  $data = $this->model->save(intval($this->query['groupid']));
   $this->view->ajax($data);
  }
 
  public function action_delete(){
-  $data = $this->model->delete($this->query['groupid']);
+  $data = $this->model->delete(intval($this->query['groupid']));
   $this->view->ajax($data);
  }
 
  public function action_create(){
-  $data = (!empty($this->query['groupname'])) ? $this->model->create($this->query['groupname'], $this->query['gid']) : NULL;
+  $data = (!empty($this->query['groupname'])) ? $this->model->create($this->query['groupname'], intval($this->query['gid'])) : NULL;
   $this->view->ajax($data);
  }
 
  public function action_addMember(){
-  $data = (!empty($this->query['groupid'])) ? $this->model->addMember($this->query['groupid'], $this->query['member']) : NULL;
+  $data = (!empty($this->query['groupid'])) ? $this->model->addMember(intval($this->query['groupid']), $this->query['member']) : NULL;
   $this->view->ajax($data);
  }
 
  public function action_removeMember(){
-  $data = (!empty($this->query['groupid'])) ? $this->model->removeMember($this->query['groupid'], $this->query['member']) : NULL;
+  $data = (!empty($this->query['groupid'])) ? $this->model->removeMember(intval($this->query['groupid']), $this->query['member']) : NULL;
   $this->view->ajax($data);
  }
 }
