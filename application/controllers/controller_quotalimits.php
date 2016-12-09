@@ -10,27 +10,27 @@ class Controller_Quotalimits extends Controller{
  }
 
  public function action_index(){
-  $data = $this->model->get_data();
-  $this->view->generate('quotalimits_view.php', 'template_view.php', $data);
+  //$data = $this->model->get_data();
+  $this->view->generate('quotalimits_view.php', 'template_view.php', $this->model->get_data());
  }
 
  public function action_edit(){
-  $data = $this->model->get(intval($this->query['quotalimitid']));
-  $this->view->generate('quotalimit_edit.php', 'template_view.php', $data);
+  //$data = $this->model->get(intval($this->query['quotalimitid']));
+  $this->view->generate('quotalimit_edit.php', 'template_view.php', $this->model->get(intval($this->query['quotalimitid'])));
  }
 
  public function action_save(){
-  $data = $this->model->save(intval($this->query['quotalimitid']));
-  $this->view->ajax($data);
+  //$data = $this->model->save(intval($this->query['quotalimitid']));
+  $this->view->ajax($this->model->save(intval($this->query['quotalimitid'])));
  }
 
  public function action_delete(){
-  $data = $this->model->delete(intval($this->query['quotalimitid']));
-  $this->view->ajax($data);
+  //$data = $this->model->delete(intval($this->query['quotalimitid']));
+  $this->view->ajax($this->model->delete(intval($this->query['quotalimitid'])));
  }
 
  public function action_create(){
-  $data = (!empty($this->query['quotalimit'])) ? $this->model->create($this->query['quotalimit']) : NULL;
-  $this->view->ajax($data);
+  //$data = (!empty($this->query['quotalimit'])) ? $this->model->create($this->query['quotalimit']) : NULL;
+  $this->view->ajax(((!empty($this->query['quotalimit'])) ? $this->model->create($this->query['quotalimit']) : NULL));
  }
 }
