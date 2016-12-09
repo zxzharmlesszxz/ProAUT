@@ -15,17 +15,17 @@ class Controller_Quotalimits extends Controller{
  }
 
  public function action_edit(){
-  $data = $this->model->get($this->query['quotalimitid']);
+  $data = $this->model->get(intval($this->query['quotalimitid']));
   $this->view->generate('quotalimit_edit.php', 'template_view.php', $data);
  }
 
  public function action_save(){
-  $data = $this->model->save($this->query['quotalimitid']);
+  $data = $this->model->save(intval($this->query['quotalimitid']));
   $this->view->ajax($data);
  }
 
  public function action_delete(){
-  $data = $this->model->delete($this->query['quotalimitid']);
+  $data = $this->model->delete(intval($this->query['quotalimitid']));
   $this->view->ajax($data);
  }
 
