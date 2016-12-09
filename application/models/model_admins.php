@@ -29,7 +29,7 @@ class Model_Admins extends Model {
  }
 
  public function delete($adminid) {
-  return Admin::find_by_id($adminid)->delete();
+  return $this->get_data->getItem($adminid)->delete();
  }
 
  public function update(array $admin) {
