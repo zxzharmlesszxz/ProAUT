@@ -9,7 +9,9 @@ CREATE TABLE `groups` (
   `groupname` varchar(50) NOT NULL,
   `gid` int(5) unsigned NOT NULL,
   `members` text DEFAULT NULL,
-  PRIMARY KEY (`groupid`)
+  PRIMARY KEY (`groupid`),
+  UNIQUE KEY `gid` (`gid`),
+  UNIQUE KEY `groupname` (`groupname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
@@ -69,7 +71,9 @@ CREATE TABLE `users` (
   `shell` varchar(30) NOT NULL,
   `homedir` varchar(255) NOT NULL,
   `status` int(1) NOT NULL,
-  PRIMARY KEY (`userid`)
+  PRIMARY KEY (`userid`),
+  UNIQUE KEY `uid` (`uid`),
+  UNIQUE KEY `login` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
