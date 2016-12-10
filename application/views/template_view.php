@@ -59,7 +59,7 @@
 		<div id="footer">
 			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
 		</div>
-  <script>
+  <script type="text/javascript">
    $(document).ready(function(){
     //var table = $('#table').DataTable({"stateSave": true});
     var table = $('#table').DataTable();
@@ -83,6 +83,6 @@
     }
 			});
   </script>
-  <script src="/js/proaut.js"></script>
+  <script type="text/javascript" src="/js/proaut.js"></script>
 	</body>
 </html>
