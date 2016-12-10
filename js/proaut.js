@@ -144,8 +144,10 @@ $(document).ready(function(){
 
   $(document).on('click','#saveUser', function(event){
     var table = $('#table'),
+     el = $(this),
+     id = el.data('id'),
      form = $(this).parent().parent().parent(),
-     send = '',
+     send = 'userid='+id+'&',
      p = form.parent().parent();
      form.children().find('input').each(function(){
         send += $(this).prop('name')+'='+$(this).val()+'&';
