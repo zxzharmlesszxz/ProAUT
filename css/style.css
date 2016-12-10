@@ -298,3 +298,12 @@ select#users{
 td input{
 	width: 99%;
 }
+
+.hide {
+ display: none;
+ visibility: hidden;
+}
+
+button#show {
+ background-color: blue;
+}
