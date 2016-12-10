@@ -299,7 +299,7 @@ td input{
 	width: 99%;
 }
 
-.hide {
+p.hide {
  display: none;
  visibility: hidden;
 }
