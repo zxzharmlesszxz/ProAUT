@@ -1,4 +1,5 @@
 <h1>Groups</h1>
+<p>If you add new group, you must add lines with permitions to config file proftpd.conf</p>
 <p>
  <b>Create new group</b>
   <input tupe="text" name="groupname" value="" placeholder="Groupname" required />
