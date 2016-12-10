@@ -1,5 +1,5 @@
 <h1>Quota Limits</h1>
-<p>
+<p class="hide">
 <input type="text" value="" placeholder="name" name="quotalimit[name]" />
 <select name="quotalimit[quota_type]" id="quota_type">
  <option disabled selected value="">Quota type</option>
@@ -22,6 +22,7 @@
 <input type="number" value="" placeholder="files_xfer_avail" name="quotalimit[files_xfer_avail]" />
  <button id="createQuotalimit">Create new quotalimit</button>
 </p>
+<p><button alt="Add new Quota" title="Add new Quota" id="show">Add new Quota</button></p>
 <p>
 <table id='table' class='display'>
 <thead>
