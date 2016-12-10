@@ -313,8 +313,7 @@ $(document).ready(function(){
    };
   });
   
-  $( "button.show" ).click(function() {
-    alert($(p.hide));
+  $(document).on('click','button#show', function(event){
     $(p.hide).toggleClass('hide');
   });
 
