@@ -1,5 +1,5 @@
 <h1>Users</h1>
-<p>
+<p class="hide">
 <input type="text" value="" placeholder="login" name="user[login]"/>
 <input type="password" value="" placeholder="password" name="user[password]"/>
 <input type="text" value="" placeholder="username" name="user[username]"/>
@@ -10,6 +10,7 @@
 <input type="text" value="" placeholder="shell" name="user[shell]"/>
  <button id="createUser">Create new user</button>
 </p>
+<p><button alt="Add new uesr" title="Add new user" id="show">Add new user</button></p>
 <p>
 <table id='table' class='display'>
 <thead>
