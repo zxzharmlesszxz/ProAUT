@@ -1,11 +1,12 @@
 <h1>Groups</h1>
 <p>If you add new group, you must add lines with permitions to config file proftpd.conf</p>
-<p>
+<p class="hide">
  <b>Create new group</b>
   <input tupe="text" name="groupname" value="" placeholder="Groupname" required />
   <input type="number" name="gid" value="<?php echo config()->DEFAULT_GID; ?>" />
   <button id="createGroup" title="Create" alt="Create">Create</button>
 </p>
+<p><button alt="Add new group" title="Add new group" id="show">Add new group</button></p>
 <p>
 <table id='table' class='display'>
 <thead>
