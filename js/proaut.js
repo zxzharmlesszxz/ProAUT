@@ -313,7 +313,7 @@ $(document).ready(function(){
    };
   });
   
-  $(document).on('click','button.show', function(event){
+  $( "button.show" ).click(function() {
     $(p.hide).toggleClass('hide');
   });
 
