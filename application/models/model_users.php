@@ -41,7 +41,8 @@ class Model_Users extends Model {
    unset($user['password']);
    unset($user['repassword']);
   }
-  $u = $this->get_data()->getItem($user['login']);
+  $u = $this->get_data()->getItem($user['userid']);
+  unset($user['userid']);
   //$u = User::find_by_scope(array('login' => $user['login']))[0];
   if (!$u) {
    return FALSE;
