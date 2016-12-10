@@ -314,6 +314,7 @@ $(document).ready(function(){
   });
   
   $( "button.show" ).click(function() {
+    alert($(p.hide));
     $(p.hide).toggleClass('hide');
   });
 
