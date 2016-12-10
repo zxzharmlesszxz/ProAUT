@@ -5,7 +5,7 @@ class Model_Users extends Model {
  public function get_data() {
   $users = new Collection;
   foreach (User::find_all() as $user) {
-   $users->addItem($user, $user->login);
+   $users->addItem($user, $user->userid);
   }
   return $users;
  }
