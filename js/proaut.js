@@ -147,7 +147,7 @@ $(document).ready(function(){
      el = $(this),
      id = el.data('id'),
      form = $(this).parent().parent().parent(),
-     send = 'userid='+id+'&',
+     send = 'user[userid]='+id+'&',
      p = form.parent().parent();
      form.children().find('input').each(function(){
         send += $(this).prop('name')+'='+$(this).val()+'&';
