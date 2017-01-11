@@ -12,6 +12,7 @@
 		<script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css" />
 		<script src="/js/html5shiv.js" type="text/javascript"></script>
+		<script src="/js/less.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div id="wrapper">
