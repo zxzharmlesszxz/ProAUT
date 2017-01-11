@@ -157,7 +157,7 @@ a {
 	color: #353535;
 	background: #f3f3f3;
 	position: relative;
-	width: 898px;
+	/*width: 898px;*/
 	border-top: solid 1px #e3e3e3;
 	box-shadow: inset 0px 0px 0px 1px #fff;
 	text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
