@@ -16,23 +16,26 @@
 		<script src="/js/less.js" type="text/javascript"></script>
 	</head>
 	<body>
+		<header id="header">
+			<div id="logo">
+				<a href="/">ProFTP Administrate Users Tool</a>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="first active"><a href="/">Main</a></li>
+					<li><a href="/groups">Groups</a></li>
+					<li><a href="/users">Users</a></li>
+					<li><a href="/quotalimits">Quota Limits</a></li>
+					<li><a href="/quotatallies">Quota tallies</a></li>
+					<li class="last"><a href="/contacts">Contacts</a></li>
+				</ul>
+				<br class="clearfix" />
+			</div>
+		</header>
+		<footer id="footer">
+			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
+		</footer>
 		<div id="wrapper">
-			<header id="header">
-				<div id="logo">
-					<a href="/">ProFTP Administrate Users Tool</a>
-				</div>
-				<div id="menu">
-					<ul>
-						<li class="first active"><a href="/">Main</a></li>
-						<li><a href="/groups">Groups</a></li>
-      <li><a href="/users">Users</a></li>
-      <li><a href="/quotalimits">Quota Limits</a></li>
-      <li><a href="/quotatallies">Quota tallies</a></li>
-						<li class="last"><a href="/contacts">Contacts</a></li>
-					</ul>
-					<br class="clearfix" />
-				</div>
-			</header>
 			<div id="page">
 				<div id="content">
 					<div class="box">
@@ -58,9 +61,6 @@
 				<br class="clearfix" />
 			</div>
 		</div>
-		<footer id="footer">
-			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
-		</footer>
   <script type="text/javascript">
    $(document).ready(function(){
     //var table = $('#table').DataTable({"stateSave": true});
