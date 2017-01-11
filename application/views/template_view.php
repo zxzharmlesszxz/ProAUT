@@ -14,6 +14,18 @@
 		<link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css" />
 		<script src="/js/html5shiv.js" type="text/javascript"></script>
 		<script src="/js/less.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(
+				function(){
+					//var table = $('#table').DataTable({"stateSave": true});
+					var table = $('#table').DataTable();$('#table.search tfoot th').each(function(){var title = $('#table.search thead th').eq($(this).index()).text();$(this).html('<input type="text" placeholder="'+title+'" />');});
+
+					// Apply the search
+					if(table.columns().eq(0)){table.columns().each(function(colIdx){$('input', table.column(colIdx).footer()).on('keyup change', function(){table.column(colIdx).search(this.value).draw();});});}
+				}
+			);
+		</script>
+		<script type="text/javascript" src="/js/proaut.js"></script>
 	</head>
 	<body>
 		<header id="header">
@@ -32,9 +44,6 @@
 				<br class="clearfix" />
 			</div>
 		</header>
-		<footer id="footer">
-			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
-		</footer>
 		<div id="wrapper">
 			<div id="page">
 				<div id="content">
@@ -61,30 +70,8 @@
 				<br class="clearfix" />
 			</div>
 		</div>
-  <script type="text/javascript">
-   $(document).ready(function(){
-    //var table = $('#table').DataTable({"stateSave": true});
-    var table = $('#table').DataTable();
-    // Setup - add a text input to each footer cell
-    $('#table.search tfoot th').each(function(){
-     var title = $('#table.search thead th').eq($(this).index()).text();
-     //$(this).html('<input type="text" placeholder="Search '+title+'" />');
-     $(this).html('<input type="text" placeholder="'+title+'" />');
-    });
-
-    // Apply the search
-    if(table.columns().eq(0)){
-     table.columns().each(function(colIdx){
-      $('input', table.column(colIdx).footer()).on('keyup change', function(){
-        table
-         .column(colIdx)
-         .search(this.value)
-         .draw();
-      });
-     });
-    }
-			});
-  </script>
-  <script type="text/javascript" src="/js/proaut.js"></script>
+		<footer id="footer">
+			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
+		</footer>
 	</body>
 </html>
