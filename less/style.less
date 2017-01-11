@@ -15,6 +15,7 @@ h1, h2, h3, h4 {
 @color-black_dark: #333333;
 @color-black_medium: #454545;
 @color-black_full: #000000;
+@color-button: #d24444;
  
 body {
     background: @color-black_dark;
@@ -75,4 +76,13 @@ header {
 	position: relative;
 	background: #FFF;
 	box-shadow: 10px 100px 150px 0px rgba(0,0,0,0.15);
+}
+
+button {
+	color:#fff;
+	background:@color-button;
+	border:1px solid @color-button - #222;
+	padding:5px 12px;
+	background: -webkit-gradient(linear, left top, left bottom, from(@color + #151515), to(@color - #151515));
+	background: -moz-linear-gradient(top,  @color + #151515,  @color - #151515);
 }
