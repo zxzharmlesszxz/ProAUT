@@ -8,6 +8,7 @@
 		<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 		<link href="//fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet/less" type="text/css" href="/less/style.less">
 		<script src="/js/jquery-2.1.3.min.js" type="text/javascript"></script>
 		<script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css" />
