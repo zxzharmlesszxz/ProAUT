@@ -249,9 +249,3 @@ p.hide {
  display: none;
  visibility: hidden;
 }
-
-button#show {
- background-color: blue;
- color: white;
- font-weight: bold;
-}
