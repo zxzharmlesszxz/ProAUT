@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="header">
+			<header id="header">
 				<div id="logo">
 					<a href="/">ProFTP Administrate Users Tool</a>
 				</div>
@@ -32,7 +32,7 @@
 					</ul>
 					<br class="clearfix" />
 				</div>
-			</div>
+			</header>
 			<div id="page">
 				<div id="content">
 					<div class="box">
@@ -58,9 +58,9 @@
 				<br class="clearfix" />
 			</div>
 		</div>
-		<div id="footer">
+		<footer id="footer">
 			<a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
-		</div>
+		</footer>
   <script type="text/javascript">
    $(document).ready(function(){
     //var table = $('#table').DataTable({"stateSave": true});
