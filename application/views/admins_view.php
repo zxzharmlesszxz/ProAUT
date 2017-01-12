@@ -1,5 +1,5 @@
 <h1>Admins</h1>
-<p class="form">
+<p class="form hide">
 <input type="text" value="" placeholder="login" name="admin[login]"/>
 <input type="password" value="" placeholder="password" name="admin[password]"/>
 <input type="text" value="" placeholder="username" name="admin[username]"/>

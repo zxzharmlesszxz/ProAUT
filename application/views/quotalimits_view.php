@@ -1,5 +1,5 @@
 <h1>Quota Limits</h1>
-<p class="form">
+<p class="form hide">
 <input type="text" value="" placeholder="name" name="quotalimit[name]" />
 <select name="quotalimit[quota_type]" id="quota_type">
  <option disabled selected value="">Quota type</option>

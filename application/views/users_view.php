@@ -1,5 +1,5 @@
 <h1>Users</h1>
-<p class="form">
+<p class="form hide">
 <input type="text" value="" placeholder="login" name="user[login]"/>
 <input type="password" value="" placeholder="password" name="user[password]"/>
 <input type="text" value="" placeholder="username" name="user[username]"/>
