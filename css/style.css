@@ -14,25 +14,6 @@ Released   : 20120712
 	padding: 0;
 }
 
-a {
-	text-decoration: underline;
-	color: #353535;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-body {
-	line-height: 1.75em;
-	font-size: 11.5pt;
-	color: #353535;
-}
-
-body,input {
-	font-family: Kreon, serif;
-}
-
 br.clearfix {
 	clear: both;
 }
