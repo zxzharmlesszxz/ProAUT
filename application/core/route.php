@@ -24,11 +24,11 @@ class Route {
 		$controller_name = 'Controller_'.$controller_name;
 		$action_name = 'action_'.$action_name;
 
-		/*
+		/**/
 		echo "Model: $model_name <br>";
 		echo "Controller: $controller_name <br>";
 		echo "Action: $action_name <br>";
-		*/
+		/+*/
 
 		$model_file = strtolower($model_name).'.php';
 		$model_path = "application/models/".$model_file;
