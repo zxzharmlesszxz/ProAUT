@@ -24,11 +24,11 @@ class Route {
 		$controller_name = 'Controller_'.$controller_name;
 		$action_name = 'action_'.$action_name;
 
-		/**/
+		/*
 		echo "Model: $model_name <br>";
 		echo "Controller: $controller_name <br>";
 		echo "Action: $action_name <br>";
-		/**/
+		*/
 
 		$model_file = strtolower($model_name).'.php';
 		$model_path = "application/models/".$model_file;
@@ -56,7 +56,7 @@ class Route {
 		}
 	}
 
-	public function ErrorPage404() {
+ public function ErrorPage404() {
   $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
   header('HTTP/1.1 404 Not Found');
   header("Status: 404 Not Found");

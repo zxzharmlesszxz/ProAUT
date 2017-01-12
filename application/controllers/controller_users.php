@@ -47,4 +47,9 @@ class Controller_Users extends Controller {
   $data = $this->model->update($this->query['user']);
   $this->view->ajax($data);
  }
+
+ public function action_show() {
+  $data = $this->model->get_data();
+  $this->view->ajax($data);
+ }
 }
