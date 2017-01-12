@@ -226,7 +226,7 @@ td input{
 	width: 99%;
 }
 
-p.hide {
+.hide {
  display: none;
  visibility: hidden;
 }
