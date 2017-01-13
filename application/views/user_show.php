@@ -35,7 +35,7 @@ echo <<<EOT
   <td>Shell</td><td>$data->shell</td>
  </tr>
  <tr>
-  <td>Status</td><td>(((int) $data->status != 0) ? 'Enabled' : 'Disabled')</td>
+  <td>Status</td><td>$data->status</td>
  </tr>
  </tbody>
 </table>
