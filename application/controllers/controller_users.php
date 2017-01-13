@@ -49,13 +49,12 @@ class Controller_Users extends Controller {
  }
 
  public function action_show() {
-  $login = $this->query['login'];
   $users = $this->model->get_data();
   foreach ($users->keys() as $userid) {
-   if ($users->getItem($userid)->login == $login) {
+   if ($users->getItem($userid)->login == $this->query['login']) {
     $data = $users->getItem($userid);
    }
   }
-  $this->view->debug($data);
+  $this->view->generate('user_show.php', 'template_view.php', $data);
  }
 }
