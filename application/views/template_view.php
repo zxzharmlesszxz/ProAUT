@@ -24,7 +24,7 @@
 					if(table.columns().eq(0)){table.columns().each(function(colIdx){$('input', table.column(colIdx).footer()).on('keyup change', function(){table.column(colIdx).search(this.value).draw();});});}
 
 				    //if ($('input[type="checkbox"]').val() == 1)  $('input[type="checkbox"]').prop('checked', true);
-				    $('.status').each(function(){ if ($($this).val() == 1)  $($this).prop('checked', true); });
+				    $('.status').each(function(){ if ($(this).val() == 1)  $(this).prop('checked', true); });
 				}
 			);
 		</script>
