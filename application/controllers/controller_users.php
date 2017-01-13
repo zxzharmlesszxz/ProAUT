@@ -49,7 +49,7 @@ class Controller_Users extends Controller {
  }
 
  public function action_show() {
-  var_dump($data = $this->model->get_data());
+  $data = $this->model->get_data();
   $this->view->ajax($data);
  }
 }
