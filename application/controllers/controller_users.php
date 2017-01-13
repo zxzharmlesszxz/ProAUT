@@ -53,7 +53,7 @@ class Controller_Users extends Controller {
   $users = $this->model->get_data();
   foreach ($users->keys() as $userid) {
    if ($users->getItem($userid)->login == $login) {
-    $data = $user;
+    $data = $users->getItem($userid);
    }
   }
   $this->view->debug($data);
