@@ -49,7 +49,7 @@ class Controller_Users extends Controller {
  }
 
  public function action_show() {
-  $login = $this->query;
+  $login = $this->query['login'];
   $users = $this->model->get_data();
   $this->view->debug($this->query);
   foreach ($users as $user) {
