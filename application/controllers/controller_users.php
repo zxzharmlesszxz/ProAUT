@@ -52,8 +52,8 @@ class Controller_Users extends Controller {
   $login = $this->query['login'];
   $users = $this->model->get_data();
   var_dump($users);
-  foreach ($users as $user) {
-   var_dump($user);
+  foreach ($users->keys() as $userid) {
+   var_dump($users->getItem($userid));
    $data = ($user->login == $login) ? $user : null;
   }
   //$this->view->debug($data);
