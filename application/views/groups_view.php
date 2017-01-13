@@ -26,7 +26,7 @@
   $row = $data->getItem($item);
   $members = '';
   foreach (explode(',', $row->members) as $member) {
-   $members .= empty($member) ? '' : '<a href="/users/show/'.$member.'">'.$member.'</a>, ';
+   $members .= empty($member) ? '' : '<a href="/users/show/?login='.$member.'">'.$member.'</a>, ';
   }
   echo <<<EOT
    <tr>
