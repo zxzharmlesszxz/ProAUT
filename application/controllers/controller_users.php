@@ -51,8 +51,8 @@ class Controller_Users extends Controller {
  public function action_show() {
   $login = $this->query['login'];
   $users = $this->model->get_data();
-  foreach ($users as $id => $user) {
-   $this->view->debug($user);
+  foreach ($users as $user) {
+   var_dump($user);
    $data = ($user->login == $login) ? $user : null;
   }
   //$this->view->debug($data);
