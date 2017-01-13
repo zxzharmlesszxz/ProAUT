@@ -52,9 +52,10 @@ class Controller_Users extends Controller {
   $login = $this->query['login'];
   $users = $this->model->get_data();
   foreach ($users->keys() as $userid) {
-   var_dump($users->getItem($userid));
-   $data = ($users->getItem($userid)->login == $login) ? $user : null;
+   if ($users->getItem($userid)->login == $login) {
+    $data = $user;
+   }
   }
-  //$this->view->debug($data);
+  $this->view->debug($data);
  }
 }
