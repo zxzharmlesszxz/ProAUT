@@ -50,6 +50,6 @@ class Controller_Users extends Controller {
 
  public function action_show() {
   $data = $this->model->get_data();
-  $this->view->ajax($data);
+  $this->view->debug($data);
  }
 }
