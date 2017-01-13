@@ -55,6 +55,6 @@ class Controller_Users extends Controller {
    $this->view->debug($user);
    $data = ($user->login == $login) ? $user : null;
   }
-  $this->view->debug($data);
+  //$this->view->debug($data);
  }
 }
