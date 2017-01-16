@@ -73,10 +73,11 @@ $(document).ready(function(){
   $(document).on('change',"input[type=checkbox].status", function(event){
     var el = $(this),
      checked = el.prop('checked'),
-     id = el.data('id');
+     id = el.data('id'),
+     type = el.data('type');
     $.ajax({
-     url: '/users/changeStatus/',
-     data: "userid="+id,
+     url: '/'+type+'s/changeStatus/',
+     data: type+"id="+id,
      type: 'post',
      success: function(){
      }
