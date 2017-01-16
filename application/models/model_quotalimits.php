@@ -26,4 +26,18 @@ class Model_Quotalimits extends Model {
   $new = QuotaLimit::add($quotalimit['name'], $quotalimit['quota_type'], $quotalimit['per_session'], $quotalimit['limit_type'], $quotalimit['bytes_in_avail'], $quotalimit['bytes_out_avail'], $quotalimit['bytes_xfer_avail'], $quotalimit['files_in_avail'], $quotalimit['files_out_avail'], $quotalimit['files_xfer_avail']);
   return $new->save() ? $new : NULL;
  }
+
+ public function update(array $quotalimit) {
+  foreach ($quotalimit as $key => $value) {
+   $quotalimit[$key] = trim($value);
+  }
+  $u = $this->get_data()->getItem($quotalimit['quotalimitid']);
+  if (!$u) {
+   return FALSE;
+  }
+  foreach ($quotalimit as $key => $value) {
+   $u->$key = $value;
+  }
+  return $u->save() ? $u : false;
+ }
 }

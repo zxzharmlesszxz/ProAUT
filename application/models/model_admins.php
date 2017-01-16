@@ -41,7 +41,7 @@ class Model_Admins extends Model {
    unset($admin['password']);
    unset($admin['repassword']);
   }
-  $u = $this->get_data()->getItem($admin['login']);
+  $u = $this->get_data()->getItem($admin['adminid']);
   if (!$u) {
    return FALSE;
   }
