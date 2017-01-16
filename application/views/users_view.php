@@ -42,9 +42,8 @@
    <td>'.$row->username.'</td>
    <td>'.$row->email.'</td>
    <td>'.$row->homedir.'</td>
-   <td><input class="status" type="checkbox" data-id="'.$row->userid.'" '.(((int) $row->status != 0)?'checked value="1"':'value="0"').' /></td>
+   <td><input class="status" type="checkbox" data-id="'.$row->userid.'" '.(((int) $row->status != 0)?'checked value="1"':'value="0"').' data-type="user" /></td>
   </tr>';
-  //<td><div class="toggle toggle-modern" data-id="'.$row->userid.'" id="status-'.$row->login.'"></div><script>'.(($row->status == 1)?'$("#status-'.$row->login.'").trigger( "click" );':'').'</script></td>
  }
  
 ?>
