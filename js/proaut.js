@@ -1,6 +1,6 @@
 $(document).ready(function(){
   // Group functions
-  $(document).on('click','img.deleteGroup', function(event){
+  $(document).on('click','button.deleteGroup', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id');
@@ -124,7 +124,7 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','img.deleteUser', function(event){
+  $(document).on('click','button.deleteUser', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id'),
@@ -188,7 +188,7 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','img.deleteAdmin', function(event){
+  $(document).on('click','button.deleteAdmin', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id'),
@@ -257,7 +257,7 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','img.deleteQuotalimit', function(event){
+  $(document).on('click','button.deleteQuotalimit', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id'),
@@ -295,7 +295,7 @@ $(document).ready(function(){
   });
 
   // QuotaTally functions
-  $(document).on('click','img.deleteQuotatally', function(event){
+  $(document).on('click','button.deleteQuotatally', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id'),

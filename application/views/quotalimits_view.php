@@ -55,7 +55,7 @@
   $row = $data->getItem($item);
   echo <<<EOT
 <tr>
- <td>$row->name<span class="actions"><button class="delete" alt="Delete" title="Delete"></button><button class="edit" alt="Edit" title="Edit"></button></span></td>
+ <td>$row->name<span class="actions"><button class="delete deleteQuotalimit" alt="Delete" title="Delete" data-id="$row->quotalimitid"></button><button class="edit" alt="Edit" title="Edit" onclick="location.href='/quotalimits/edit/?quotalimitid=$row->quotalimitid'"></button></span></td>
  <td>$row->quota_type</td>
  <td>$row->limit_type</td>
  <td>$row->per_session</td>

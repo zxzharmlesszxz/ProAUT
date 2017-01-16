@@ -26,7 +26,7 @@
 
  foreach($data as $row){
   echo '<tr>
-   <td>'.$row->name.'<span class="actions"><button class="delete" alt="Delete" title="Delete"></button></span></td>
+   <td>'.$row->name.'<span class="actions"><button class="delete deleteQuotatally" alt="Delete" title="Delete" data-id="'.$row->quotatallyid.'"></button></span></td>
    <td>'.$row->quota_type.'</td>
    <td>'.$row->bytes_in_used.'</td>
    <td>'.$row->bytes_out_used.'</td>
