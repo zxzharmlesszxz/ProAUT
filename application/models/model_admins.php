@@ -5,14 +5,13 @@ class Model_Admins extends Model {
  public function get_data() {
   $items = new Collection;
   foreach (Admin::find_all() as $item) {
-   $items->addItem($item, $item->login);
+   $items->addItem($item, $item->adminid);
   }
   return $items;
  }
 
- public function get($userid) {
-  return $this->get_data()->getItem($admin['login']);
-  //return Admin::find_by_id($adminid);
+ public function get($adminid) {
+  return $this->get_data()->getItem($adminid);
  }
 
  public function save(Admin $admin){
