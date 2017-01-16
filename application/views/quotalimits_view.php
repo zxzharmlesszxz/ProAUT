@@ -20,7 +20,7 @@
 <input type="number" value="" placeholder="files_in_avail" name="quotalimit[files_in_avail]" />
 <input type="number" value="" placeholder="files_out_avail" name="quotalimit[files_out_avail]" />
 <input type="number" value="" placeholder="files_xfer_avail" name="quotalimit[files_xfer_avail]" />
- <button id="createQuotalimit">Create new quotalimit</button>
+ <button id="create">Create new quotalimit</button>
 </p>
 <p><button alt="Add new Quota" title="Add new Quota" id="show">Add new Quota</button></p>
 <p>

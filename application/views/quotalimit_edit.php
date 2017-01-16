@@ -2,7 +2,7 @@
 echo <<<EOT
 <h1>Quota Limits</h1>
 <p>
-<table class='display'>
+<table id='1table' class='display'>
  <thead>
   <th>Param</th>
   <th>Value</th>

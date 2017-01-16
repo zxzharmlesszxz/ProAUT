@@ -4,7 +4,7 @@
  <b>Create new group</b>
   <input tupe="text" name="groupname" value="" placeholder="Groupname" required />
   <input type="number" name="gid" value="" placeholder="<?php echo config()->DEFAULT_GID; ?>" />
-  <button id="createGroup" title="Create" alt="Create">Create</button>
+  <button id="create" title="Create" alt="Create">Create</button>
 </p>
 <p><button alt="Add new group" title="Add new group" id="show">Add new group</button></p>
 <p>

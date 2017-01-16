@@ -4,7 +4,7 @@
 <input type="password" value="" placeholder="password" name="admin[password]"/>
 <input type="text" value="" placeholder="username" name="admin[username]"/>
 <input type="text" value="" placeholder="email" name="admin[email]"/>
- <button id="createAdmin">Create new Admin</button>
+ <button id="create">Create new Admin</button>
 </p>
 <p><button alt="Add new Admin" title="Add new Admin" id="show">Add new Admin</button></p>
 <p>

@@ -8,7 +8,7 @@
 <input type="text" value="" placeholder="uid" name="user[uid]"/>
 <input type="text" value="" placeholder="gid" name="user[gid]"/>
 <input type="text" value="" placeholder="shell" name="user[shell]"/>
- <button id="createUser">Create new user</button>
+ <button id="create">Create new user</button>
 </p>
 <p><button alt="Add new uesr" title="Add new user" id="show">Add new user</button></p>
 <p>
