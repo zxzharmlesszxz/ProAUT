@@ -30,7 +30,7 @@
   }
   echo <<<EOT
    <tr>
-    <td>$row->groupname<span class="actions"><button class="delete" alt="Delete" title="Delete"></button><button class="edit" alt="Edit" title="Edit"></button></span></td>
+    <td>$row->groupname<span class="actions"><button class="delete" alt="Delete" title="Delete"></button><button class="edit" alt="Edit" title="Edit" onclick="location.href='/groups/edit/?groupid=$row->groupid'"></button></span></td>
     <td>$row->gid</td>
    <td>$members</td>
   </tr>
