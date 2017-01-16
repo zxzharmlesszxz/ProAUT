@@ -24,6 +24,7 @@
 
      // Autocheck checkbox if value = 1
      $('input[type="checkbox"].status').each(function(){ ($(this).val() == 1) ? $(this).prop('checked', true) : $(this).prop('checked', false); });
+     $('input[type="checkbox",name="quotalimit[per_session]"]').each(function(){ ($(this).val() == 'true') ? $(this).prop('checked', true) : $(this).prop('checked', false); });
     }
    );
   </script>
