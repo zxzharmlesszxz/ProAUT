@@ -41,7 +41,7 @@ echo <<<EOT
     <label for="">Per session</label>
    </td>
    <td>
-    <input type="checkbox" name="quotalimit[per_session]" value="intval($data->per_session)" />
+    <input type="checkbox" name="quotalimit[per_session]" value="$data->per_session" />
    </td>
   </tr>
   <tr>
