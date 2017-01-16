@@ -61,7 +61,7 @@ $(document).ready(function(){
   });
 
   // Change status checkbox functions
-  $(document).on('change',"input[type=checkbox]", function(event){
+  $(document).on('change',"input[type=checkbox].status", function(event){
     var el = $(this);
      if(el.is(':checked')){
       el.attr('value',1);
