@@ -35,7 +35,7 @@
    </td>
    <td>'.$row->username.'</td>
    <td>'.$row->email.'</td>
-   <td><input class="status" type="checkbox" data-id="'.$row->adminid.'" value="$row->status" /></td>
+   <td><input class="status" type="checkbox" data-id="'.$row->adminid.'" value="'.$row->status.'" /></td>
   </tr>';
  }
  
