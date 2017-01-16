@@ -1,22 +1,5 @@
 $(document).ready(function(){
   // Group functions
-  $(document).on('click','button.deleteGroup', function(event){
-   if(confirm('Are you shure?')){
-    var el = $(this),
-     id = el.data('id');
-
-    $.ajax({
-     url: '/groups/delete/',
-     data: "groupid="+id,
-     type: 'post',
-     success: function(){
-      el.parent().parent().parent().css('background-color',"red");
-      setTimeout("el.parent().parent().parent().remove()", 4000);
-     }
-    });
-   };
-  });
-
   $(document).on('click','button.addMember', function(event){
     var el = $('select#users'),
      els = $('select#users option:selected'),
@@ -124,24 +107,6 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','button.deleteUser', function(event){
-   if(confirm('Are you shure?')){
-    var el = $(this),
-     id = el.data('id'),
-     result = "User #" + id + " has been removed.";
-
-    $.ajax({
-     url: '/users/delete/',
-     data: "userid="+id,
-     type: 'post',
-     success: function(){
-      alert(result);
-      el.parent().parent().parent().remove();
-     }
-    });
-   };
-  });
-
   $(document).on('click','#saveUser', function(event){
     var table = $('#table'),
      el = $(this),
@@ -186,24 +151,6 @@ $(document).ready(function(){
        }
      }
     });
-  });
-
-  $(document).on('click','button.deleteAdmin', function(event){
-   if(confirm('Are you shure?')){
-    var el = $(this),
-     id = el.data('id'),
-     result = "Admin #" + id + " has been removed.";
-
-    $.ajax({
-     url: '/admins/delete/',
-     data: "userid="+id,
-     type: 'post',
-     success: function(){
-      alert(result);
-      el.parent().parent().parent().remove();
-     }
-    });
-   };
   });
 
   $(document).on('click','#saveAdmin', function(event){
@@ -257,24 +204,6 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','button.deleteQuotalimit', function(event){
-   if(confirm('Are you shure?')){
-    var el = $(this),
-     id = el.data('id'),
-     result = "Quota limit #" + id + " has been removed.";
-
-    $.ajax({
-     url: '/quotalimits/delete/',
-     data: "quotalimitid="+id,
-     type: 'post',
-     success: function(){
-      alert(result);
-      el.parent().parent().parent().remove();
-     }
-    });
-   };
-  });
-
   $(document).on('click','.saveQuotalimit', function(event){
     var table = $('#table'),
      form = $(this).parent().parent().parent(),
@@ -294,16 +223,22 @@ $(document).ready(function(){
     });
   });
 
-  // QuotaTally functions
-  $(document).on('click','button.deleteQuotatally', function(event){
+  $(document).on('click','button#show', function(event){
+    $('p.form').toggleClass('hide');
+  });
+
+// Delete function
+  $(document).on('click','button.delete', function(event){
    if(confirm('Are you shure?')){
     var el = $(this),
      id = el.data('id'),
-     result = "Quota tally #" + id + " has been removed.";
+     type = el.data('type'),
+     result = type + " #" + id + " has been removed.";
+     if (type == 'quotatally') { link = '/quotatalies/delete/' } else { link = '/'+type+'s/delete/'}
 
     $.ajax({
-     url: '/quotatallies/delete/',
-     data: "quotatallyid="+id,
+     url: link,
+     data: type+"id="+id,
      type: 'post',
      success: function(){
       alert(result);
@@ -311,10 +246,6 @@ $(document).ready(function(){
      }
     });
    };
-  });
-  
-  $(document).on('click','button#show', function(event){
-    $('p.form').toggleClass('hide');
   });
 
 });
