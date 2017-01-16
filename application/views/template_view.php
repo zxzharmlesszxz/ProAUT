@@ -22,7 +22,7 @@
      if(table.columns().eq(0)){table.columns().each(function(colIdx){$('input', table.column(colIdx).footer()).on('keyup change', function(){table.column(colIdx).search(this.value).draw();});});}
 
      // Autocheck checkbox if value = 1
-     $('input[type="checkbox"]').each(function(){ ($(this).val() == 1 || $(this).val() == true) ? $(this).prop('checked', true) : $(this).prop('checked', false); });
+     $('input[type="checkbox"]').each(function(){ ($(this).val() == 1) ? $(this).prop('checked', true) : $(this).prop('checked', false); });
     }
    );
   </script>
