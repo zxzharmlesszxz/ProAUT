@@ -45,7 +45,7 @@ echo <<<EOT
  </tr>
  <tr>
   <td>
-   </td><td><button data-id="$data->adminid" id="save">Save</button>
+   </td><td><button class="save" data-id="$data->adminid" data-type="admin">Save</button>
   </td>
  </tr>
  </tbody>

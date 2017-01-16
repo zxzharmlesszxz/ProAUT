@@ -108,28 +108,6 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','#saveUser', function(event){
-    var table = $('#table'),
-     el = $(this),
-     id = el.data('id'),
-     form = $(this).parent().parent().parent(),
-     send = 'user[userid]='+id+'&',
-     p = form.parent().parent();
-     form.children().find('input').each(function(){
-        send += $(this).prop('name')+'='+$(this).val()+'&';
-    });
-
-    $.ajax({
-     url: '/users/update/',
-     dataType: 'json',
-     data: send,
-     type: 'post',
-     success: function(data){
-      p.prepend('<b>User data updated!</b>');
-     }
-    });
-  });
-
   // User functions
   $(document).on('click','#createAdmin', function(event){
     var table = $('#table'),
@@ -150,26 +128,6 @@ $(document).ready(function(){
        } else {
         alert('Error in admin create!');
        }
-     }
-    });
-  });
-
-  $(document).on('click','#saveAdmin', function(event){
-    var table = $('#table'),
-     form = $(this).parent().parent().parent(),
-     send = '',
-     p = form.parent().parent();
-     form.children().find('input').each(function(){
-        send += $(this).prop('name')+'='+$(this).val()+'&';
-    });
-
-    $.ajax({
-     url: '/admins/update/',
-     dataType: 'json',
-     data: send,
-     type: 'post',
-     success: function(data){
-      p.prepend('<b>Admin data updated!</b>');
      }
     });
   });
@@ -205,25 +163,6 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','.saveQuotalimit', function(event){
-    var table = $('#table'),
-     form = $(this).parent().parent().parent(),
-     send = '';
-     form.children().find('input').each(function(){
-        send += $(this).prop('name')+'='+$(this).val()+'&';
-    });
-     alert(send);
-     $.ajax({
-     url: '/quotalimits/save/',
-     dataType: 'json',
-     data: send,
-     type: 'post',
-     success: function(){
-      alert(result);
-     }
-    });
-  });
-
   $(document).on('click','button#show', function(event){
     $('p.form').toggleClass('hide');
   });
@@ -247,6 +186,30 @@ $(document).ready(function(){
      }
     });
    };
+  });
+
+// Save function
+  $(document).on('click','button.save', function(event){
+    var table = $('#table'),
+     el = $(this),
+     id = el.data('id'),
+     type = el.data('type'),
+     form = $(this).parent().parent().parent(),
+     send = type+'['+type+'id]='+id+'&',
+     p = form.parent().parent();
+     form.children().find('input').each(function(){
+        send += $(this).prop('name')+'='+$(this).val()+'&';
+    });
+
+    $.ajax({
+     url: '/'+type+'s/update/',
+     dataType: 'json',
+     data: send,
+     type: 'post',
+     success: function(data){
+      p.prepend('<b>'+type+' data updated!</b>');
+     }
+    });
   });
 
 });
