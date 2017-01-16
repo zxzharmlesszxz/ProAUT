@@ -33,10 +33,7 @@
  foreach($data->keys() as $item){
   $row = $data->getItem($item);
   echo '<tr>
-   <td>'.$row->login.'<span class="actions">
-    <button class="delete" alt="Delete" title="Delete"></button>
-    <button class="edit" alt="Edit" title="Edit"></button></span>
-   </td>
+   <td>'.$row->login.'<span class="actions"><button class="delete" alt="Delete" title="Delete"></button><button class="edit" alt="Edit" title="Edit"></button></span></td>
    <td>'.$row->username.'</td>
    <td>'.$row->email.'</td>
    <td>'.$row->homedir.'</td>
