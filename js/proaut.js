@@ -62,14 +62,23 @@ $(document).ready(function(){
 
   // Change status checkbox functions
   $(document).on('change',"input[type=checkbox].status", function(event){
-    var el = $(this);
-     if(el.is(':checked')){
+    var el = $(this),
+    id = el.data('id'),
+    type = el.data('type');
+    if(el.is(':checked')){
       el.attr('value',1);
-     }else{
+    }else{
       el.attr('value',0);
+    }
+    $.ajax({
+     url: '/'+type+'s/changeStatus/',
+     data: type+"id="+id,
+     type: 'post',
+     success: function(){
      }
+    });
   });
-
+/*
   $(document).on('change',"input[type=checkbox].status", function(event){
     var el = $(this),
      checked = el.prop('checked'),
@@ -82,7 +91,7 @@ $(document).ready(function(){
      success: function(){
      }
     });
-  });
+  }); */
 
   // User functions
   $(document).on('click','#createUser', function(event){
