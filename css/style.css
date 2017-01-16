@@ -27,7 +27,6 @@ Released   : 20120712
 	color: #ffffff;
 	text-shadow: black 0px 0px 7px;
 	text-decoration: none;
-	font-family: "Open Sans", sans-serif;
 	font-size: 20px;
 }
 
@@ -43,7 +42,6 @@ Released   : 20120712
 	position: absolute;
 	right: 40px;
 	height: 57px;
-	font-family: "Open Sans", sans-serif;
 }
 
 #menu a {
