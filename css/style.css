@@ -9,40 +9,6 @@ Version    : 1.0
 Released   : 20120712
 */
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
-br.clearfix {
-	clear: both;
-}
-
-img.alignleft {
-	float: left;
-	margin: 5px 30px 20px 0;
-}
-
-img.aligntop {
-	margin: 5px 0 20px 0;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-ul {
-	margin-bottom: 1.5em;
-}
-
-ul h4 {
-	margin-bottom: 0.35em;
-}
-
-a {
-	color: #353535;
-}
-
 #content {
 	padding: 0px;
 	/*width: 615px;

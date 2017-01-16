@@ -1,13 +1,8 @@
+/* Fonts for my Website */
 @header-font: Georgia;
+
+/* Width of my Website */
 @width: 1000px;
-
-h1, h2, h3, h4 {
-    font-family: @header-font;
-}
-
-.large {
-    font-family:@header-font;
-}
 
 /* Colors for my Website */
 @color-orange: #ff9900;
@@ -16,7 +11,12 @@ h1, h2, h3, h4 {
 @color-black_medium: #454545;
 @color-black_full: #000000;
 @color-button: #00d244;
- 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	background: @color-black_dark;
 	color: @color-black_medium;
@@ -37,6 +37,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 	color: @color-black_dark;
 	text-transform: uppercase;
+	font-family: @header-font;
 	font-weight: normal;
 }
 
@@ -79,6 +80,31 @@ header {
 	position: relative;
 }
 
+br.clearfix {
+	clear: both;
+}
+
+img.alignleft {
+	float: left;
+	margin: 5px 30px 20px 0;
+}
+
+img.aligntop {
+	margin: 5px 0 20px 0;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+ul h4 {
+	margin-bottom: 0.35em;
+}
+
 #wrapper {
 	position: relative;
 	background: #FFF;
@@ -92,4 +118,8 @@ button#show {
 	padding: 5px 12px;
 	background: -webkit-gradient(linear, left top, left bottom, from(@color-button + #151515), to(@color-button - #151515));
 	background: -moz-linear-gradient(top,  @color-button + #151515,  @color-button - #151515);
+}
+
+.large {
+    font-family:@header-font;
 }
