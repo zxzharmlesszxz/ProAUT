@@ -33,17 +33,17 @@
    <div id="logo">
     <a href="/">ProFTP Administrate Users Tool</a>
    </div>
-   <div id="menu">
-    <ul>
+   <nav id="menu">
+    <menu>
      <li class="first active"><a href="/">Main</a></li>
      <li><a href="/groups">Groups</a></li>
      <li><a href="/users">Users</a></li>
      <li><a href="/quotalimits">Quota Limits</a></li>
      <li><a href="/quotatallies">Quota tallies</a></li>
      <li class="last"><a href="/contacts">Contacts</a></li>
-    </ul>
+    </menu>
     <br class="clearfix" />
-   </div>
+   </nav>
   </header>
   <div id="wrapper">
    <div id="page">
