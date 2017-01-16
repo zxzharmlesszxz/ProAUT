@@ -36,6 +36,7 @@
    <nav id="menu">
     <menu>
      <li class="first active"><a href="/">Main</a></li>
+     <li><a href="/admins">Admins</a></li>
      <li><a href="/groups">Groups</a></li>
      <li><a href="/users">Users</a></li>
      <li><a href="/quotalimits">Quota Limits</a></li>
