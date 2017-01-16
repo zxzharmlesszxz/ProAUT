@@ -35,7 +35,7 @@
   echo '<tr>
    <td>'.$row->login.
     '<span class="actions">
-     <button class="delete deleteUser" alt="Delete" title="Delete" data-id="'.$row->userid.'"></button>
+     <button class="delete" alt="Delete" title="Delete" data-id="'.$row->userid.'" data-type="user"></button>
      <button class="edit" alt="Edit" title="Edit" onclick="location.href=\'/users/edit/?userid='.$row->userid.'\'"></button>
     </span>
    </td>

@@ -33,7 +33,7 @@
     <td>
      $row->groupname
      <span class="actions">
-      <button class="delete deleteGroup" alt="Delete" title="Delete" data-id="$row->groupid"></button>
+      <button class="delete" alt="Delete" title="Delete" data-id="$row->groupid" data-type="group"></button>
       <button class="edit" alt="Edit" title="Edit" onclick="location.href='/groups/edit/?groupid=$row->groupid'"></button>
      </span>
     </td>
