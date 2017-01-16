@@ -14,33 +14,26 @@ class Controller_Admins extends Controller {
  }
 
  public function action_index() {
-  $data = $this->model->get_data();
-  $this->view->generate('admins_view.php', 'template_view.php', $data);
+  $this->view->generate('admins_view.php', 'template_view.php', $this->model->get_data());
  }
 
  public function action_edit() {
-  $data = $this->model->get(intval($this->query['adminid']));
-  $this->view->generate('admin_edit.php', 'template_view.php', $data);
+  $this->view->generate('admin_edit.php', 'template_view.php', $this->model->get(intval($this->query['adminid'])));
  }
 
  public function action_changeStatus() {
-  $data = $this->model->changeStatus(intval($this->query['adminid']));
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->changeStatus(intval($this->query['adminid'])));
  }
 
  public function action_create() {
-  $data = $this->model->create($this->query['admin']);
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->create($this->query['admin']));
  }
 
  public function action_delete() {
-  $admin = $this->model->get(intval($this->query['adminid']));
-  $data = $this->model->delete(intval($admin->adminid));
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->delete(intval($this->model->get(intval($this->query['adminid']))->adminid)));
  }
 
  public function action_update() {
-  $data = $this->model->update($this->query['admin']);
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->update($this->query['admin']));
  }
 }
