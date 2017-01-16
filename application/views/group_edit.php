@@ -29,8 +29,8 @@
   }
   echo '</select>';
   echo '</td><td>';
-  echo '<span class="addMember"><img src="/images/left.gif" /></span>';
-  echo '<span class="removeMember"><img src="/images/right.gif" /></span>';
+  echo '<button class="addMember left" alt="Add member" title="Add member"></button></span>';
+  echo '<button class="removeMember right" alt="Remove member" title="Remove member"></span>';
   echo '</td><td>';
   echo '<select id="users" multiple>';
   foreach(User::find_all() as $user){

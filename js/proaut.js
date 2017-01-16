@@ -17,7 +17,7 @@ $(document).ready(function(){
    };
   });
 
-  $(document).on('click','span.addMember', function(event){
+  $(document).on('click','button.addMember', function(event){
     var el = $('select#users'),
      els = $('select#users option:selected'),
      id = $('select#members').data('id');
@@ -35,7 +35,7 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click','span.removeMember', function(event){
+  $(document).on('click','button.removeMember', function(event){
     var el = $('select#members'), 
      els = $('select#members option:selected'),
      id = el.data('id');
