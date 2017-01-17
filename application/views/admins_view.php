@@ -26,7 +26,7 @@
 
  foreach($data->keys() as $item){
   $row = $data->getItem($item);
-  echo <<EOT
+  echo <<<EOT
   <tr>
    <td>$row->login
     <span class="actions">
