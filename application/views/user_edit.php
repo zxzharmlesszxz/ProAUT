@@ -54,8 +54,13 @@ echo <<<EOT
   </td>
  </tr>
  <tr>
+  <td colspan="2">
+   Please input password if you want to change it only!
+  </td>
+ </tr>
+ <tr>
   <td>
-   <label for="password">Password(Please input password if you want to change it.)</label></td><td><input type="password" value="" name="user[password]"/>
+   <label for="password">Password</label></td><td><input type="password" value="" name="user[password]"/>
   </td>
  </tr>
  <tr>
