@@ -43,7 +43,6 @@ class Model_Users extends Model {
   }
   $u = $this->get_data()->getItem($user['userid']);
   unset($user['userid']);
-  //$u = User::find_by_scope(array('login' => $user['login']))[0];
   if (!$u) {
    return FALSE;
   }

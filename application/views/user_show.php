@@ -45,3 +45,4 @@ echo <<<EOT
 </p>
 <p><button alt="Edit" title="Edit" onclick="location.href='/users/edit/?userid=$data->userid'">Edit this user</button></p>
 EOT;
+var_dump($data->quotalimit);
