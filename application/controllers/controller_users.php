@@ -14,23 +14,19 @@ class Controller_Users extends Controller {
  }
 
  public function action_index() {
-  $data = $this->model->get_data();
-  $this->view->generate('users_view.php', 'template_view.php', $data);
+  $this->view->generate('users_view.php', 'template_view.php', $this->model->get_data());
  }
 
  public function action_edit() {
-  $data = $this->model->get(intval($this->query['userid']));
-  $this->view->generate('user_edit.php', 'template_view.php', $data);
+  $this->view->generate('user_edit.php', 'template_view.php', $this->model->get(intval($this->query['userid'])));
  }
 
  public function action_changeStatus() {
-  $data = $this->model->changeStatus(intval($this->query['userid']));
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->changeStatus(intval($this->query['userid'])));
  }
 
  public function action_create() {
-  $data = $this->model->create($this->query['user']);
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->create($this->query['user']));
  }
 
  public function action_delete() {
@@ -44,8 +40,7 @@ class Controller_Users extends Controller {
  }
 
  public function action_update() {
-  $data = $this->model->update($this->query['user']);
-  $this->view->ajax($data);
+  $this->view->ajax($this->model->update($this->query['user']));
  }
 
  public function action_show() {
@@ -53,6 +48,9 @@ class Controller_Users extends Controller {
   foreach ($users->keys() as $userid) {
    if ($users->getItem($userid)->login == $this->query['login']) {
     $data = $users->getItem($userid);
+    if (config()->QUOTA) {
+     $data->quotalimit = 'Quotalimit must be here';
+    }
    }
   }
   $this->view->generate('user_show.php', 'template_view.php', $data);

@@ -11,6 +11,7 @@ $config = array(
  'DEFAULT_UID' => 65534,
  'DEFAULT_GID' => 65534,
  'DEFAULT_SHELL' => '/bin/nonexistent',
+ 'QUOTA' => true,
  'mysql' => array(
   'host' => 'localhost',
   'database' => 'proftp',

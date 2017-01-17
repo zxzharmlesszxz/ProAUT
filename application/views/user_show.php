@@ -37,6 +37,9 @@ echo <<<EOT
  <tr>
   <td>Status</td><td>$data->status</td>
  </tr>
+ <tr>
+  <td>Quota</td><td>$data->quotalimit</td>
+ </tr>
  </tbody>
 </table>
 </p>
