@@ -50,7 +50,7 @@ echo <<<EOT
  </tr>
  <tr>
   <td>
-   <label for="status">Status</label></td><td><input type="checkbox" value="$data->status" name="user[status]" />
+   <label for="status">Status</label></td><td><input class="status" type="checkbox" value="$data->status" name="user[status]" />
   </td>
  </tr>
  <tr>
