@@ -59,7 +59,7 @@
    </div>
   </div>
   <footer id="footer">
-   <a href="/">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
+   <a href="https://github.com/zxzharmlesszxz/ProAUT">ProAUT</a> &copy; 2015-<?php echo date("Y"); ?>
   </footer>
  </body>
 </html>
