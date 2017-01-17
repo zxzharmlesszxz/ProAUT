@@ -34,13 +34,13 @@
   $row = $data->getItem($item);
   echo <<<EOT
   <tr>
-   <td>$row->login
+   <td><a href="/users/show/?login=$row->login">$row->login</a>
     <span class="actions">
      <button class="delete" alt="Delete" title="Delete" data-id="$row->userid" data-type="user"></button>
      <button class="edit" alt="Edit" title="Edit" onclick="location.href='/users/edit/?userid=$row->userid'"></button>
     </span>
    </td>
-   <td><a href="/users/show/?login=$row->username">$row->username</a></td>
+   <td>$row->username</td>
    <td>$row->email</td>
    <td>$row->homedir</td>
    <td><input class="status" type="checkbox" data-id="$row->userid" value="$row->status" data-type="user" /></td>
