@@ -14,8 +14,9 @@ $(document).ready(function(){
 
   // Colored nav menu
   $('nav#menu').children('menu').children('li').each(function(){
-    alert($(this).children('a').attr('href'));
-    //alert(location.pathname);
+    if ($(this).children('a').attr('href')) == location.pathname){
+      $(this).toggleClass('active');
+    }
   });
 
   // Group functions
