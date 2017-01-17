@@ -26,17 +26,19 @@
 
  foreach($data->keys() as $item){
   $row = $data->getItem($item);
-  echo '<tr>
-   <td>'.$row->login.
-    '<span class="actions">
-     <button class="delete" alt="Delete" title="Delete" data-id="'.$row->adminid.'" data-type="admin"></button>
-     <button class="edit" alt="Edit" title="Edit" onclick="location.href=\'/admins/edit/?adminid='.$row->adminid.'\'"></button>
+  echo <<EOT
+  <tr>
+   <td>$row->login
+    <span class="actions">
+     <button class="delete" alt="Delete" title="Delete" data-id="$row->adminid" data-type="admin"></button>
+     <button class="edit" alt="Edit" title="Edit" onclick="location.href='/admins/edit/?adminid=$row->adminid'"></button>
     </span>
    </td>
-   <td>'.$row->username.'</td>
-   <td>'.$row->email.'</td>
-   <td><input class="status" type="checkbox" data-id="'.$row->adminid.'" value="'.$row->status.'" data-type="admin" /></td>
-  </tr>';
+   <td>$row->username</td>
+   <td>$row->email</td>
+   <td><input class="status" type="checkbox" data-id="$row->adminid" value="$row->status" data-type="admin" /></td>
+  </tr>
+EOT
  }
  
 ?>
