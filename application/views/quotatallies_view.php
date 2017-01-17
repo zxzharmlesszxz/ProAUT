@@ -24,7 +24,8 @@
 <tbody>
 <?php
 
- foreach($data as $row){
+ foreach($data->keys() as $item){
+  $row = $data->getItem($item);
   echo '<tr>
    <td>'.$row->name.'<span class="actions"><button class="delete" alt="Delete" title="Delete" data-id="'.$row->quotatallyid.'" data-type="qoutatally"></button></span></td>
    <td>'.$row->quota_type.'</td>
