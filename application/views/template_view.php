@@ -6,28 +6,12 @@
   <meta name="keywords" content="" />
   <title>ProAUT - ProFTP Administrate Users Tool</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link rel="stylesheet/less" type="text/css" href="/less/style.less">
-  <script src="/js/jquery-2.1.3.min.js" type="text/javascript"></script>
-  <script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
   <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css" />
-  <script src="/js/html5shiv.js" type="text/javascript"></script>
-  <script src="/js/less.js" type="text/javascript"></script>
-  <script type="text/javascript">
-   $(document).ready(
-    function(){
-     //var table = $('#table').DataTable({"stateSave": true});
-     var table = $('#table').DataTable();
-     $('#table.search tfoot th').each(function(){var title = $('#table.search thead th').eq($(this).index()).text();$(this).html('<input type="text" placeholder="'+title+'" />');});
-
-     // Apply the search
-     if(table.columns().eq(0)){table.columns().each(function(colIdx){$('input', table.column(colIdx).footer()).on('keyup change', function(){table.column(colIdx).search(this.value).draw();});});}
-
-     // Autocheck checkbox if value = 1
-     $('input[type="checkbox"].status').each(function(){ ($(this).val() == 1) ? $(this).prop('checked', true) : $(this).prop('checked', false); });
-     $('input[type="checkbox"][name="quotalimit[per_session]"]').each(function(){ ($(this).val() == 'true') ? $(this).prop('checked', true) : $(this).prop('checked', false); });
-    }
-   );
-  </script>
+  <link rel="stylesheet/less" type="text/css" href="/less/style.less">
+  <script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="/js/html5shiv.js"></script>
+  <script type="text/javascript" src="/js/less.js"></script>
   <script type="text/javascript" src="/js/proaut.js"></script>
  </head>
  <body>
