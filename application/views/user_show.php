@@ -37,10 +37,8 @@ echo <<<EOT
  <tr>
   <td>Status</td><td>$data->status</td>
  </tr>
- <tr>
-  <td colspan="2"><button alt="Edit" title="Edit" onclick="location.href='/users/edit/?userid=$data->userid'"></button></td>
- </tr>
  </tbody>
 </table>
 </p>
+<p><button alt="Edit" title="Edit" onclick="location.href='/users/edit/?userid=$data->userid'">Edit this user</button></p>
 EOT;
