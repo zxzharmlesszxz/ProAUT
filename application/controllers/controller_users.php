@@ -31,9 +31,12 @@ class Controller_Users extends Controller {
 
  public function action_delete() {
   $user = $this->model->get(intval($this->query['userid']));
-  foreach (Group::find_by_like(array('members' => $user->login)) as $group) {
-   $group->delMember($user->login);
-   $group->save();
+  $groups = Group::find_by_like(array('members' => $user->login));
+  if ($groups) {
+   foreach ($groups as $group) {
+    $group->delMember($user->login);
+    $group->save();
+   }
   }
   $data = $this->model->delete(intval($user->userid));
   $this->view->ajax($data);
