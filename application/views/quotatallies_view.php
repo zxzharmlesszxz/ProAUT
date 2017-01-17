@@ -26,16 +26,22 @@
 
  foreach($data->keys() as $item){
   $row = $data->getItem($item);
-  echo '<tr>
-   <td>'.$row->name.'<span class="actions"><button class="delete" alt="Delete" title="Delete" data-id="'.$row->quotatallyid.'" data-type="qoutatally"></button></span></td>
-   <td>'.$row->quota_type.'</td>
-   <td>'.$row->bytes_in_used.'</td>
-   <td>'.$row->bytes_out_used.'</td>
-   <td>'.$row->bytes_xfer_used.'</td>
-   <td>'.$row->files_in_used.'</td>
-   <td>'.$row->files_out_used.'</td>
-   <td>'.$row->files_xfer_used.'</td>
-  </tr>';
+  echo <<<EOT
+  <tr>
+   <td>$row->name
+    <span class="actions">
+     <button class="delete" alt="Delete" title="Delete" data-id="$row->quotatallyid" data-type="qoutatally"></button>
+    </span>
+   </td>
+   <td>$row->quota_type.'</td>
+   <td>$row->bytes_in_used.'</td>
+   <td>$row->bytes_out_used.'</td>
+   <td>$row->bytes_xfer_used.'</td>
+   <td>$row->files_in_used.'</td>
+   <td>$row->files_out_used.'</td>
+   <td>$row->files_xfer_used</td>
+  </tr>
+EOT;
  }
  
 ?>
