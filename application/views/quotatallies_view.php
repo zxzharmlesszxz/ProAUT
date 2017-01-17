@@ -30,7 +30,7 @@
   <tr>
    <td>$row->name
     <span class="actions">
-     <button class="delete" alt="Delete" title="Delete" data-id="$row->quotatallyid" data-type="qoutatally"></button>
+     <button class="delete" alt="Delete" title="Delete" data-id="$row->quotatallyid" data-type="quotatally"></button>
     </span>
    </td>
    <td>$row->quota_type</td>

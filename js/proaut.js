@@ -95,9 +95,6 @@ $(document).ready(function(){
       link = '/'+type+'s/delete/';
      }
 
-     alert('Type is '+type);
-     alert('Link is '+link);
-
     $.ajax({
      url: link,
      data: type+"id="+id,
