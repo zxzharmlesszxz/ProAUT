@@ -89,8 +89,14 @@ $(document).ready(function(){
      id = el.data('id'),
      type = el.data('type'),
      result = type + " #" + id + " has been removed.";
-     alert('Type is'+type);
-     if (type == 'quotatally') { link = '/quotatalies/delete/' } else { link = '/'+type+'s/delete/'}
+     if (type == 'quotatally') {
+      link = '/quotatalies/delete/';
+     } else {
+      link = '/'+type+'s/delete/';
+     }
+
+     alert('Type is '+type);
+     alert('Link is '+link);
 
     $.ajax({
      url: link,
