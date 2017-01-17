@@ -93,6 +93,15 @@ $(document).ready(function(){
     });
   });
 
+  $(document).on('change','input[type="checkbox"][name="quotalimit[per_session]"]', function(event){
+    var el = $(this);
+    if(el.is(':checked')){
+        el.attr('value','true');
+    }else{
+        el.attr('value','false');
+    }
+  });
+
   // User functions
   $(document).on('click','#createUser', function(event){
     var table = $('#table'),
