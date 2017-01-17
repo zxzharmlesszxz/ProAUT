@@ -50,7 +50,7 @@ class Controller_Users extends Controller {
     $data = $users->getItem($userid);
     if (config()->QUOTA) {
      $quotalimit = QuotaLimit::find_by_scope(array('name' => $data->login))[0];
-     $data->quotalimit = $quotalimit->bytes_in_avail;
+     $data->quotalimit = empty($quotalimit->bytes_in_avail) ? 'Not limited' : $quotalimit->bytes_in_avail;
     }
    }
   }
