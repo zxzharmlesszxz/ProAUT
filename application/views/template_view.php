@@ -21,13 +21,13 @@
    </div>
    <nav id="menu">
     <menu>
-     <li class="first active"><a href="/">Main</a></li>
+     <li><a href="/">Main</a></li>
      <li><a href="/admins">Admins</a></li>
      <li><a href="/groups">Groups</a></li>
      <li><a href="/users">Users</a></li>
      <li><a href="/quotalimits">Quota Limits</a></li>
      <li><a href="/quotatallies">Quota tallies</a></li>
-     <li class="last"><a href="/contacts">Contacts</a></li>
+     <li><a href="/contacts">Contacts</a></li>
     </menu>
     <br class="clearfix" />
    </nav>

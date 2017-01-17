@@ -12,6 +12,11 @@ $(document).ready(function(){
   // Autocheck checkbox if value = true
   $('input[type="checkbox"][name="quotalimit[per_session]"]').each(function(){ ($(this).val() == 'true') ? $(this).prop('checked', true) : $(this).prop('checked', false); });
 
+  // Colored nav menu
+  $('nav#menu').children('menu').children('li').each(function(){
+    alert(location.pathname);
+  });
+
   // Group functions
   $(document).on('click','button.addMember', function(event){
     var el = $('select#users'),
