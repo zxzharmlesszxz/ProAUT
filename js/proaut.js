@@ -90,7 +90,7 @@ $(document).ready(function(){
      type = el.data('type'),
      result = type + " #" + id + " has been removed.";
      if (type == 'quotatally') {
-      link = '/quotatalies/delete/';
+      link = '/quotatallies/delete/';
      } else {
       link = '/'+type+'s/delete/';
      }
