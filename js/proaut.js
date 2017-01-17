@@ -139,6 +139,12 @@ $(document).ready(function(){
       send += $(this).prop('name')+'='+$(this).val()+'&';
     });
 
+    form.children('select').each(function(){
+      $(this).children('option:selected').each(function(){
+        send += $(this).parent().prop('name')+'='+$(this).val()+'&';
+      });
+    });
+
     $.ajax({
      url: '/'+type+'s/create/',
      dataType: 'json',
