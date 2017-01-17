@@ -49,8 +49,8 @@ class Controller_Users extends Controller {
    if ($users->getItem($userid)->login == $this->query['login']) {
     $data = $users->getItem($userid);
     if (config()->QUOTA) {
-     $quotalimit = Group::find_by_scope(array('name' => $data->login));
-     $data->quotalimit = $quotalimit;//->bytes_in_avail;
+     $quotalimit = Quotalimit::find_by_scope(array('name' => $data->login));
+     $data->quotalimit = $quotalimit->bytes_in_avail;
     }
    }
   }
