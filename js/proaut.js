@@ -9,6 +9,7 @@ $(document).ready(function(){
 
   // Autocheck checkbox if value = 1
   $('input[type="checkbox"].status').each(function(){ ($(this).val() == 1) ? $(this).prop('checked', true) : $(this).prop('checked', false); });
+  // Autocheck checkbox if value = true
   $('input[type="checkbox"][name="quotalimit[per_session]"]').each(function(){ ($(this).val() == 'true') ? $(this).prop('checked', true) : $(this).prop('checked', false); });
 
   // Group functions
@@ -77,6 +78,7 @@ $(document).ready(function(){
     var el = $(this),
     id = el.data('id'),
     type = el.data('type');
+    if (type == undefined) return;
     if(el.is(':checked')){
       el.attr('value',1);
     }else{
@@ -90,20 +92,6 @@ $(document).ready(function(){
      }
     });
   });
-/*
-  $(document).on('change',"input[type=checkbox].status", function(event){
-    var el = $(this),
-     checked = el.prop('checked'),
-     id = el.data('id'),
-     type = el.data('type');
-    $.ajax({
-     url: '/'+type+'s/changeStatus/',
-     data: type+"id="+id,
-     type: 'post',
-     success: function(){
-     }
-    });
-  }); */
 
   // User functions
   $(document).on('click','#createUser', function(event){
