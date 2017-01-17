@@ -38,7 +38,7 @@
    <td>$row->email</td>
    <td><input class="status" type="checkbox" data-id="$row->adminid" value="$row->status" data-type="admin" /></td>
   </tr>
-EOT
+EOT;
  }
  
 ?>
