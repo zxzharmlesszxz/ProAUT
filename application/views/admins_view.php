@@ -10,16 +10,20 @@
 <p>
 <table id='table' class='display'>
 <thead>
- <th>Login</th>
- <th>Username</th>
- <th>Email</th>
- <th>Status</th>
+ <tr>
+  <th>Login</th>
+  <th>Username</th>
+  <th>Email</th>
+  <th>Status</th>
+ </tr>
 </thead>
 <tfoot>
- <th>Login</th>
- <th>Username</th>
- <th>Email</th>
- <th>Status</th>
+ <tr>
+  <th>Login</th>
+  <th>Username</th>
+  <th>Email</th>
+  <th>Status</th>
+ </tr>
 </tfoot>
 <tbody>
 <?php

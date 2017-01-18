@@ -5,12 +5,16 @@ echo <<<EOT
 <p>
 <table id='1table' class='display'>
 <thead>
- <th>Param</th>
- <th>Value</th>
+ <tr>
+  <th>Param</th>
+  <th>Value</th>
+ </tr>
 </thead>
 <tfoot>
- <th>Param</th>
- <th>Value</th>
+ <tr>
+  <th>Param</th>
+  <th>Value</th>
+ </tr>
 </tfoot>
 <tbody>
  <tr>

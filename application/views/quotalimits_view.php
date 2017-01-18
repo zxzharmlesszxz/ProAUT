@@ -26,28 +26,32 @@
 <p>
 <table id='table' class='display'>
 <thead>
- <th>Name</th>
- <th>Quota type</th>
- <th>Limit type</th>
- <th>Per Session</th>
- <th>Bytes in avail</th>
- <th>Bytes out avail</th>
- <th>Bytes xfer avail</th>
- <th>Files in avail</th>
- <th>Files out avail</th>
- <th>Files xfer avail</th>
+ <tr>
+  <th>Name</th>
+  <th>Quota type</th>
+  <th>Limit type</th>
+  <th>Per Session</th>
+  <th>Bytes in avail</th>
+  <th>Bytes out avail</th>
+  <th>Bytes xfer avail</th>
+  <th>Files in avail</th>
+  <th>Files out avail</th>
+  <th>Files xfer avail</th>
+ </tr>
 </thead>
 <tfoot>
- <th>Name</th>
- <th>Quota type</th>
- <th>Limit type</th>
- <th>Per Session</th>
- <th>Bytes in avail</th>
- <th>Bytes out avail</th>
- <th>Bytes xfer avail</th>
- <th>Files in avail</th>
- <th>Files out avail</th>
- <th>Files xfer avail</th>
+ <tr>
+  <th>Name</th>
+  <th>Quota type</th>
+  <th>Limit type</th>
+  <th>Per Session</th>
+  <th>Bytes in avail</th>
+  <th>Bytes out avail</th>
+  <th>Bytes xfer avail</th>
+  <th>Files in avail</th>
+  <th>Files out avail</th>
+  <th>Files xfer avail</th>
+ </tr>
 </tfoot>
 <tbody>
 <?php

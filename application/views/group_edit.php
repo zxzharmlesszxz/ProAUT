@@ -2,18 +2,22 @@
 <p>
 <table id='table' class='display'>
 <thead>
- <th>Groupname</th>
- <th>Gid</th>
- <th>Members</th>
- <th>Actions</th>
- <th>Users</th>
+ <tr>
+  <th>Groupname</th>
+  <th>Gid</th>
+  <th>Members</th>
+  <th>Actions</th>
+  <th>Users</th>
+ </tr>
 </thead>
 <tfoot>
- <th>Groupname</th>
- <th>Gid</th>
- <th>Members</th>
- <th>Actions</th>
- <th>Users</th>
+ <tr>
+  <th>Groupname</th>
+  <th>Gid</th>
+  <th>Members</th>
+  <th>Actions</th>
+  <th>Users</th>
+ </tr>
 </tfoot>
 <tbody>
 <?php

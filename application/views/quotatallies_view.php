@@ -2,24 +2,28 @@
 <p>
 <table id='table' class='display'>
 <thead>
- <th>Name</th>
- <th>Quota type</th>
- <th>Bytes in used</th>
- <th>Bytes out used</th>
- <th>Bytes xfer used</th>
- <th>Files in used</th>
- <th>Files out used</th>
- <th>Files xfer used</th>
+ <tr>
+  <th>Name</th>
+  <th>Quota type</th>
+  <th>Bytes in used</th>
+  <th>Bytes out used</th>
+  <th>Bytes xfer used</th>
+  <th>Files in used</th>
+  <th>Files out used</th>
+  <th>Files xfer used</th>
+ </tr>
 </thead>
 <tfoot>
- <th>Name</th>
- <th>Quota type</th>
- <th>Bytes in used</th>
- <th>Bytes out used</th>
- <th>Bytes xfer used</th>
- <th>Files in used</th>
- <th>Files out used</th>
- <th>Files xfer used</th>
+ <tr>
+  <th>Name</th>
+  <th>Quota type</th>
+  <th>Bytes in used</th>
+  <th>Bytes out used</th>
+  <th>Bytes xfer used</th>
+  <th>Files in used</th>
+  <th>Files out used</th>
+  <th>Files xfer used</th>
+ </tr>
 </tfoot>
 <tbody>
 <?php
