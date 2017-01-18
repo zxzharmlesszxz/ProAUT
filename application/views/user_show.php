@@ -2,7 +2,6 @@
 
 echo <<<EOT
 <h1>User</h1>
-<p>
 <table id='1table' class='display'>
 <thead>
  <tr>
@@ -46,6 +45,5 @@ echo <<<EOT
  </tr>
  </tbody>
 </table>
-</p>
 <p><button alt="Edit" title="Edit" onclick="location.href='/users/edit/?userid=$data->userid'">Edit this user</button></p>
 EOT;
