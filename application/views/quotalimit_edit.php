@@ -1,7 +1,6 @@
 <?php
 echo <<<EOT
 <h1>Quota Limits</h1>
-<p>
 <table id='1table' class='display'>
  <thead>
   <tr>
@@ -105,6 +104,5 @@ echo <<<EOT
   </tr>
  </tbody>
 </table>
-</p>
 EOT
 ?>

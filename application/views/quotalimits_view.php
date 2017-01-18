@@ -23,7 +23,6 @@
  <button class="create" title="Create" alt="Create" data-type="quotalimit">Create</button>
 </p>
 <p><button alt="Add new Quota" title="Add new Quota" id="show">Add new Quota</button></p>
-<p>
 <table id='table' class='display'>
 <thead>
  <tr>
@@ -75,4 +74,3 @@ EOT;
 ?>
  </tbody>
 </table>
-</p>

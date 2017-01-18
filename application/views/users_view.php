@@ -11,7 +11,6 @@
  <button class="create" title="Create" alt="Create" data-type="user">Create</button>
 </p>
 <p><button alt="Add new uesr" title="Add new user" id="show">Add new user</button></p>
-<p>
 <table id='table' class='display'>
 <thead>
  <th>Login</th>
@@ -51,4 +50,3 @@ EOT;
 ?>
  </tbody>
 </table>
-</p>

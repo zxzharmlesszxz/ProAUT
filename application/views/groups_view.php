@@ -7,7 +7,6 @@
   <button class="create" title="Create" alt="Create" data-type="group">Create</button>
 </p>
 <p><button alt="Add new group" title="Add new group" id="show">Add new group</button></p>
-<p>
 <table id='table' class='display'>
 <thead>
  <tr>
@@ -50,4 +49,3 @@ EOT;
 ?>
  </tbody>
 </table>
-</p>
