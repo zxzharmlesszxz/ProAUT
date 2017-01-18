@@ -38,9 +38,13 @@ class Route {
 		}
 
 		$controller_file = strtolower($controller_name).'.php';
-		$controller_path = file_exists("application/controllers/".$controller_file) ? "application/controllers/".$controller_file : "application/controllers/controller_404.php";
+		$controller_path = "application/controllers/".$controller_file;
 
-		include $controller_path;
+		if (file_exists($controller_path)) {
+			include "application/controllers/".$controller_file;
+		} else {
+			Route::ErrorPage404();
+		}
 
 		$controller = new $controller_name;
 		$action = $action_name;
@@ -57,5 +61,6 @@ class Route {
   header('HTTP/1.1 404 Not Found');
   header("Status: 404 Not Found");
   header('Location:'.$host.'404');
+  exit;
  }
 }
