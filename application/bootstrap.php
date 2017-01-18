@@ -11,7 +11,7 @@ $database = new MySQL_Database;
 Registry::_set('database', $database);
 
 function __autoload($class){
- include_once __DIR__."/classes/${class}.class.php";
+ @include_once __DIR__."/classes/${class}.class.php";
 }
 
 function config(){
