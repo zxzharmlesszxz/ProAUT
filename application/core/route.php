@@ -38,13 +38,9 @@ class Route {
 		}
 
 		$controller_file = strtolower($controller_name).'.php';
-		$controller_path = "application/controllers/".$controller_file;
+		$controller_path = file_exists("application/controllers/".$controller_file) ? "application/controllers/".$controller_file : "application/controllers/controller_404.php";
 
-		if (file_exists($controller_path)) {
-			include "application/controllers/".$controller_file;
-		} else {
-			Route::ErrorPage404();
-		}
+		include $controller_path;
 
 		$controller = new $controller_name;
 		$action = $action_name;
