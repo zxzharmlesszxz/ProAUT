@@ -45,7 +45,7 @@ class Route {
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
 
   if (method_exists($controller, $action_name)) {
-   $controller->$action();
+   $controller->$action_name();
   } else {
    $controller->action_error();
   }
