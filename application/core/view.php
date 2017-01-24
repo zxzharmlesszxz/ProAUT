@@ -14,7 +14,7 @@ class View {
  * Output: none
  **/
  public function generate($content_view, $template_view, $data = null) {
-  include config()->VIEWS_PATH.DS.$template_view;
+  include config()->VIEWS_PATH.'/'.$template_view;
  }
 
  /**
