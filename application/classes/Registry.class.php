@@ -4,7 +4,7 @@
 * Registry Class
 **/
 
-namespace Core;
+//namespace Core;
 
 class Registry {
  static private $store = array();
