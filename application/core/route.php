@@ -24,7 +24,7 @@ class Route {
   $controller_path = config()->CONTROLLERS_PATH.DS.strtolower($controller_name).".php";
   include ((!file_exists($controller_path)) ? config()->CONTROLLERS_PATH.DS."controller_404.php" : $controller_path);
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
-  $controller->(method_exists($controller, $action_name) ? $action_name : action_error)();
+  method_exists($controller, $action_name) ? $controller->$action_name() : $controller->action_error();
  }
 
  public function ErrorPage404() {
