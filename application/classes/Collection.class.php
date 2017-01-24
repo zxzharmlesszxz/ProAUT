@@ -1,10 +1,10 @@
 <?php
 
-namespace Core;
-
 /**
 * Collection class
 **/
+
+//namespace Core;
 
 class Collection {
  private $items = array();

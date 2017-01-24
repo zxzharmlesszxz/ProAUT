@@ -1,11 +1,11 @@
 <?php
 
-namespace Core;
-
 /**
 * Model Class
 * Type: abstract
 **/
+
+//namespace Core;
 
 abstract class Model {
  /**

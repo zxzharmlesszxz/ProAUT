@@ -4,6 +4,8 @@
 * Database Class
 **/
 
+//namespace Database;
+
 abstract class Database {
 
     private $connection;

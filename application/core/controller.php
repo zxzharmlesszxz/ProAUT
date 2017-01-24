@@ -1,11 +1,11 @@
 <?php
 
-namespace Core;
-
 /**
 * Controller Class
 * Type: abstract
 **/
+
+//namespace Core;
 
 abstract class Controller {
  

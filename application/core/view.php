@@ -1,10 +1,10 @@
 <?php
 
-namespace Core;
-
 /**
 * View Class
 **/
+
+//namespace Core;
 
 class View {
  /**

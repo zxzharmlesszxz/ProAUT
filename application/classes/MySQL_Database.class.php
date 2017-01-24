@@ -1,10 +1,10 @@
 <?php
 
-namespace Database/MySQL;
-
 /**
 * MySQLDatabase Class
 **/
+
+//namespace Database/MySQL;
 
 class MySQL_Database extends Database{
 

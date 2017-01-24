@@ -1,10 +1,10 @@
 <?php
 
-namespace Core;
-
 /**
 * Route Class
 **/
+
+//namespace Core;
 
 class Route {
  static public function start() {
