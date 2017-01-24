@@ -4,6 +4,7 @@
 * Config class(Singleton)
 **/
 
+namespace Core;
 class Config {
  static public $instance;
  protected $_configFile;
