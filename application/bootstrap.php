@@ -5,9 +5,9 @@ require_once 'core/view.php';
 require_once 'core/controller.php';
 require_once 'core/route.php';
 
-$config = Config::getInstance();
+$config = Core\Config::getInstance();
 Registry::_set('config', $config);
-$database = new MySQL_Database;
+$database = new Database\MySQL_Database;
 Registry::_set('database', $database);
 
 function __autoload($class){
@@ -15,11 +15,11 @@ function __autoload($class){
 }
 
 function config(){
- return Registry::_get('config');
+ return Core\Registry::_get('config');
 }
 
 function db(){
- return Registry::_get('database');
+ return Core\Registry::_get('database');
 }
 
-Route::start();
+Core\Route::start();
