@@ -8,7 +8,7 @@ require_once 'core/route.php';
 
 $config = Config::getInstance();
 Registry::_set('config', $config);
-$database = new Database\MySQL_Database;
+$database = new MySQL_Database;
 Registry::_set('database', $database);
 
 function __autoload($class){
