@@ -16,11 +16,11 @@ function __autoload($class){
 }
 
 function config(){
- return egistry::_get('config');
+ return \Core\Registry::_get('config');
 }
 
 function db(){
- return Registry::_get('database');
+ return \Core\Registry::_get('database');
 }
 
-Route::start();
+\Core\Route::start();

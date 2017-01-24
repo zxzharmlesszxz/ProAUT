@@ -1,10 +1,10 @@
 <?php
 
-namespace Core;
-
 /**
 * Registry Class
 **/
+
+namespace Core;
 
 class Registry {
  static private $store = array();
