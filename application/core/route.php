@@ -22,7 +22,7 @@ class Route {
   $model_path = config()->MODELS_PATH.'/'.strtolower($model_name).".php";
   (!file_exists($model_path)) ?: include $model_path;
   $controller_path = config()->CONTROLLERS_PATH.'/'.strtolower($controller_name).".php";
-  include ((!file_exists($controller_path)) ? config()->CONTROLLERS_PATH.'/'."controller_404.php" : $controller_path);
+  (!file_exists($controller_path)) ? include config()->CONTROLLERS_PATH.'/'."controller_404.php" : include $controller_path;
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
   method_exists($controller, $action_name) ? $controller->$action_name() : $controller->action_error();
  }
