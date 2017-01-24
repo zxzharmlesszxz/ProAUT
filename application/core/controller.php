@@ -19,6 +19,6 @@ abstract class Controller {
  abstract public function action_index();
  
  public function action_error() {
-  $this->view->generate('404_view.php', 'template_view.php', "Method doesn't exists");
+  $this->view->generate('404_view.php', 'template_view.php', "Module/Method doesn't exists");
  }
 }

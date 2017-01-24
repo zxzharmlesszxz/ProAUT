@@ -26,7 +26,6 @@ class Route {
   $controller_path = config()->CONTROLLERS_PATH.'/'.strtolower($controller_name).".php";
 
   if (!file_exists($controller_path)) {
-   self::ErrorPage404();
    include config()->CONTROLLERS_PATH.'/'."controller_404.php";
   } else {
    include $controller_path;
