@@ -20,14 +20,28 @@ class Route {
   */
 
   $model_path = config()->MODELS_PATH.'/'.strtolower($model_name).".php";
-  (!file_exists($model_path)) ?: include $model_path;
+
+  if (!file_exists($model_path)) include $model_path;
+
   $controller_path = config()->CONTROLLERS_PATH.'/'.strtolower($controller_name).".php";
-  (!file_exists($controller_path)) ? include config()->CONTROLLERS_PATH.'/'."controller_404.php" : include $controller_path;
+
+  if (!file_exists($controller_path)) {
+   include config()->CONTROLLERS_PATH.'/'."controller_404.php"
+  } else {
+   include $controller_path;
+  }
+
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
-  method_exists($controller, $action_name) ? $controller->$action_name() : $controller->action_error();
+
+  if (method_exists($controller, $action_name)) {
+   $controller->$action_name()
+  } else {
+   self::ErrorPage404();
+   $controller->action_error();
+  }
  }
 
- public function ErrorPage404() {
+ protected function ErrorPage404() {
   header('HTTP/1.1 404 Not Found');
   header('Status: 404 Not Found');
   header('Location:/404');
