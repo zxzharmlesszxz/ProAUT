@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 /**
 * Collection class
 **/
@@ -20,7 +22,7 @@ class Collection {
  }
 
  public function deleteItem($key) {
-  if (isset($this->items[$key])) {
+  if ($this->keyExists($key)) {
    unset($this->items[$key]);
   } else {
    throw new KeyInvalidException("Invalid key $key.");
@@ -28,7 +30,7 @@ class Collection {
  }
 
  public function getItem($key) {
-  if (isset($this->items[$key])) {
+  if ($this->keyExists($key)) {
    return $this->items[$key];
   } else {
    throw new KeyInvalidException("Invalid key $key.");
@@ -39,10 +41,20 @@ class Collection {
   return array_keys($this->items);
  }
 
+ /**
+ * Get length of array $items
+ * Input: empty
+ * Output: integer
+ **/
  public function length() {
   return count($this->items);
  }
 
+ /**
+ * Check if key exists in array $items
+ * Input: string
+ * Output: bulean
+ **/
  public function keyExists($key) {
   return isset($this->items[$key]);
  }

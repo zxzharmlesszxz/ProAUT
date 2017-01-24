@@ -1,28 +1,17 @@
 <?php
 
+namespace Core;
+
 /**
 * Route Class
 **/
 
 class Route {
-
  static public function start() {
-  $controller_name = 'Main';
-  $action_name = 'index';
-  
   $routes = explode('/', $_SERVER['REQUEST_URI']);
-
-  if (!empty($routes[1])) { 
-   $controller_name = $routes[1];
-  }
-  
-  if (!empty($routes[2])) {
-   $action_name = $routes[2];
-  }
-
+  $controller_name = 'Controller'.(!empty($routes[1]) ? $routes[1] : 'Main');
+  $action_name = 'action_'.(!empty($routes[2]) ? $routes[2] : 'index');
   $model_name = 'Model_'.$controller_name;
-  $controller_name = 'Controller_'.$controller_name;
-  $action_name = 'action_'.$action_name;
 
   /*
   echo "Model: $model_name <br>";
@@ -30,25 +19,12 @@ class Route {
   echo "Action: $action_name <br>";
   */
 
-  $model_file = strtolower($model_name).'.php';
-  $model_path = "application/models/".$model_file;
-
-  if (file_exists($model_path)) {
-   include "application/models/".$model_file;
-  }
-
-  $controller_file = strtolower($controller_name).'.php';
-  $controller_path = file_exists("application/controllers/".$controller_file) ? "application/controllers/".$controller_file : "application/controllers/controller_404.php";
-
-  include $controller_path;
-
+  $model_path = config()->MODELS_PATH.DS.strtolower($model_name).".php";
+  include (!file_exists($model_path)) ?: $model_path;
+  $controller_path = config()->CONTROLLERS_PATH.DS.  strtolower($controller_name).".php";
+  include (!file_exists($controller_path) ? config()->CONTROLLERS_PATH.DS."controller_404.php" : $controller_path;
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
-
-  if (method_exists($controller, $action_name)) {
-   $controller->$action_name();
-  } else {
-   $controller->action_error();
-  }
+  $controller->(method_exists($controller, $action_name) ? $action_name : action_error)();
  }
 
  public function ErrorPage404() {

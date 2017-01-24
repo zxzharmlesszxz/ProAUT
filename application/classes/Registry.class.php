@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 /**
 * Registry Class
 **/

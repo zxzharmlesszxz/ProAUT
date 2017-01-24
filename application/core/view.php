@@ -1,19 +1,35 @@
 <?php
 
+namespace Core;
+
 /**
 * View Class
 **/
 
 class View {
+ /**
+ * Input: content_view
+ *        template_view
+ *        data
+ * Output: none
+ **/
  public function generate($content_view, $template_view, $data = null) {
-  include 'application/views/'.$template_view;
+  include config()->VIEWS_PATH.DS.$template_view;
  }
 
+ /**
+ * Input: mixed
+ * Output: json array
+ **/
  public function ajax($data = null) {
   header('Content-Type: application/json');
   echo json_encode($data);
  }
 
+ /**
+ * Input: mixed
+ * Output: string
+ **/
  public function debug($data = null) {
   var_dump($data);
  }

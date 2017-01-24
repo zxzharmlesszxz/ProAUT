@@ -1,5 +1,7 @@
 <?php
 
+namespace Database/MySQL;
+
 /**
 * MySQLDatabase Class
 **/
