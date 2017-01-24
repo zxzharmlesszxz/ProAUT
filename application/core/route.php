@@ -26,7 +26,7 @@ class Route {
   $controller_path = config()->CONTROLLERS_PATH.'/'.strtolower($controller_name).".php";
 
   if (!file_exists($controller_path)) {
-   include config()->CONTROLLERS_PATH.'/'."controller_404.php"
+   include config()->CONTROLLERS_PATH.'/'."controller_404.php";
   } else {
    include $controller_path;
   }
@@ -34,7 +34,7 @@ class Route {
   $controller = class_exists($controller_name) ? new $controller_name : new Controller_404;
 
   if (method_exists($controller, $action_name)) {
-   $controller->$action_name()
+   $controller->$action_name();
   } else {
    self::ErrorPage404();
    $controller->action_error();
