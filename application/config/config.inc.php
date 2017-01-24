@@ -4,7 +4,7 @@
 * ProAUT Project Configuration file
 **/
 
-namespace Core;
+//namespace Core;
 
 $config = array(
  'PROJECT_NAME' => 'ProFTPd Administrate Users Tool',
