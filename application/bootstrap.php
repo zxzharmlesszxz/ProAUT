@@ -1,5 +1,6 @@
 <?php
-use Core;
+//use Core\Config;
+//use Core\
 require_once 'core/model.php';
 require_once 'core/view.php';
 require_once 'core/controller.php';
