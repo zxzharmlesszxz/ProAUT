@@ -1,15 +1,12 @@
 <?php
 //use Core\Config;
-//use Core\
 require_once 'core/model.php';
 require_once 'core/view.php';
 require_once 'core/controller.php';
 require_once 'core/route.php';
 
-$config = Config::getInstance();
-Registry::_set('config', $config);
-$database = new MySQL_Database;
-Registry::_set('database', $database);
+Registry::_set('config', Config::getInstance());
+Registry::_set('database', new MySQL_Database);
 
 function __autoload($class){
  @include_once __DIR__."/classes/${class}.class.php";
