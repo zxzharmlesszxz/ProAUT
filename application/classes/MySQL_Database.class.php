@@ -24,13 +24,13 @@ class MySQL_Database extends Database{
 // Create a database connection function
     public function open_connection() {
 	$config = config()->mysql;
-        $this->connection = mysql_connect($config['host'], $config['user'], $config['password']);
+        $this->connection = mysqli_connect($config['host'], $config['user'], $config['password']);
         if (!$this->connection) {
             die("Database connection failed: " . mysql_error());
         } else {
             // 2. Select a database to use
-            mysql_set_charset($config['charset'], $this->connection);
-            $db_select = mysql_select_db($config['database'], $this->connection);
+            mysqli_set_charset($config['charset'], $this->connection);
+            $db_select = mysqli_select_db($config['database'], $this->connection);
             if (!$db_select) {
                 die("Database selection failed: " . mysql_error());
             }
@@ -40,7 +40,7 @@ class MySQL_Database extends Database{
 // Close a database connection function
     public function close_connection() {
         if (isset($this->connection)) {
-            mysql_close($this->connection);
+            mysqli_close($this->connection);
             unset($this->connection);
         }
     }
@@ -48,7 +48,7 @@ class MySQL_Database extends Database{
 // Perform database query function
     public function query($sql) {
         $this->last_query = $sql;
-        $result = mysql_query($sql, $this->connection);
+        $result = mysqli_query($sql, $this->connection);
         $this->confirm_query($result);
 
         return $result;
@@ -63,7 +63,7 @@ class MySQL_Database extends Database{
             if ($this->magic_quotes_active) {
                 $value = stripslashes($value);
             }
-            $value = mysql_real_escape_string($value);
+            $value = mysqli_real_escape_string($value);
         } else { // before PHP v4.3.0
             // if magic quotes aren't already on then add slashes manualy
             if (!$this->magic_quotes_active) {
@@ -76,20 +76,20 @@ class MySQL_Database extends Database{
 
 // "database-neutral" methods	
     public function fetch_array($result_set) {
-        return mysql_fetch_array($result_set);
+        return mysqli_fetch_array($result_set);
     }
 
     public function num_rows($result_set) {
-        return mysql_num_rows($result_set);
+        return mysqli_num_rows($result_set);
     }
 
     public function insert_id() {
         // get the last id inserted over the current db connection
-        return mysql_insert_id($this->connection);
+        return mysqli_insert_id($this->connection);
     }
 
     public function affected_rows() {
-        return mysql_affected_rows($this->connection);
+        return mysqli_affected_rows($this->connection);
     }
 
 // Confirm database query function
