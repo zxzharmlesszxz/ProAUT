@@ -29,10 +29,10 @@ class MySQL_Database extends Database{
             die("Database connection failed: " . mysql_error());
         } else {
             // 2. Select a database to use
-            mysqli_set_charset($config['charset'], $this->connection);
-            $db_select = mysqli_select_db($config['database'], $this->connection);
+            mysqli_set_charset($this->connection, $config['charset']);
+            $db_select = mysqli_select_db( $this->connection, $config['database']);
             if (!$db_select) {
-                die("Database selection failed: " . mysql_error());
+                die("Database selection failed: " . mysqli_error());
             }
         }
     }
@@ -48,7 +48,7 @@ class MySQL_Database extends Database{
 // Perform database query function
     public function query($sql) {
         $this->last_query = $sql;
-        $result = mysqli_query($sql, $this->connection);
+        $result = mysqli_query($this->connection, $sql);
         $this->confirm_query($result);
 
         return $result;
