@@ -17,7 +17,7 @@ class MySQL_Database extends Database{
     public function __construct() {
         $this->open_connection();
         $this->magic_quotes_active = get_magic_quotes_gpc();
-        $this->real_escape_string_exists = function_exists("mysql_real_escape_string");
+        $this->real_escape_string_exists = function_exists("mysqli_real_escape_string");
 
     }
 
@@ -59,7 +59,7 @@ class MySQL_Database extends Database{
         // i.e. PHP >= v4.3.0
         $value = htmlspecialchars(trim($value));
         if ($this->real_escape_string_exists) { // PHP v4.3.0 or higher
-            // undo any magic quote effects so mysql_real_escape_string can do the work
+            // undo any magic quote effects so mysqli_real_escape_string can do the work
             if ($this->magic_quotes_active) {
                 $value = stripslashes($value);
             }
